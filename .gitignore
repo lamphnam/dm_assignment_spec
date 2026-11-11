@@ -1,0 +1,19 @@
+
+# --- Dữ liệu competition (tải bằng tài khoản Kaggle của chính bạn) ---
+data/
+*.zip
+
+# --- Credentials ---
+.env
+kaggle.json
+.kaggle/
+
+# --- Môi trường / cache ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# --- Liên kết skill cục bộ cho agent đọc .agents/skills (ADR-0006) ---
+.agents/skills
