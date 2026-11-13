@@ -1,0 +1,84 @@
+{
+  "name": "exp003_embed_v1",
+  "model": "embed_v1",
+  "created_utc": "2026-11-13T18:49:16+00:00",
+  "protocol": {
+    "n_splits": 5,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "scored": "non-iclp papers of each fold",
+    "groups": "normalised title",
+    "threshold_tuned_on_cv": true
+  },
+  "threshold": 0.55,
+  "cv_at_threshold": {
+    "score_mean": 0.617848932246638,
+    "score_std": 0.009719442427917616,
+    "Q_mean": 0.5152851091667651,
+    "R_mean": 0.7728697136803723,
+    "n_folds": 15,
+    "fold_scores": [
+      0.61797,
+      0.62018,
+      0.61873,
+      0.61978,
+      0.60194,
+      0.60139,
+      0.60934,
+      0.62265,
+      0.63707,
+      0.62455,
+      0.62432,
+      0.62121,
+      0.60824,
+      0.61235,
+      0.62801
+    ]
+  },
+  "cv_select_all": {
+    "score_mean": 0.5677830561211752,
+    "score_std": 0.007537530505425959,
+    "Q_mean": 0.3964727942533175,
+    "R_mean": 1.0,
+    "n_folds": 15,
+    "fold_scores": [
+      0.56648,
+      0.57155,
+      0.5635,
+      0.56856,
+      0.56144,
+      0.55889,
+      0.56615,
+      0.56886,
+      0.58554,
+      0.56353,
+      0.57023,
+      0.58183,
+      0.56694,
+      0.56509,
+      0.55814
+    ]
+  },
+  "test": {
+    "n_selected": 363,
+    "n_total": 596,
+    "selected_by_venue": {
+      "cav": 125,
+      "kr": 119,
+      "lics": 85,
+      "lpnmr": 34
+    }
+  },
+  "submission": {
+    "path": "submissions/exp003_embed_v1.csv",
+    "sha256": "11645f1f4e2efd7070fe60f617d4c9b768a58409752e2848c503797cfb87d046"
+  },
+  "env": {
+    "python": "3.14.5",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  }
+}

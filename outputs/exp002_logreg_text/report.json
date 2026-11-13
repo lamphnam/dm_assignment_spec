@@ -1,0 +1,84 @@
+{
+  "name": "exp002_logreg_text",
+  "model": "logreg_text",
+  "created_utc": "2026-11-13T17:17:21+00:00",
+  "protocol": {
+    "n_splits": 5,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "scored": "non-iclp papers of each fold",
+    "groups": "normalised title",
+    "threshold_tuned_on_cv": true
+  },
+  "threshold": 0.5,
+  "cv_at_threshold": {
+    "score_mean": 0.5767739382143265,
+    "score_std": 0.011073983944591428,
+    "Q_mean": 0.45076424068532017,
+    "R_mean": 0.802125731242171,
+    "n_folds": 15,
+    "fold_scores": [
+      0.57333,
+      0.59422,
+      0.57203,
+      0.55199,
+      0.56972,
+      0.57339,
+      0.59003,
+      0.57828,
+      0.58865,
+      0.56563,
+      0.57023,
+      0.57099,
+      0.58181,
+      0.58584,
+      0.58545
+    ]
+  },
+  "cv_select_all": {
+    "score_mean": 0.5553010249350291,
+    "score_std": 0.007249523548333623,
+    "Q_mean": 0.3844041057954059,
+    "R_mean": 1.0,
+    "n_folds": 15,
+    "fold_scores": [
+      0.55343,
+      0.56158,
+      0.55096,
+      0.55281,
+      0.54749,
+      0.54569,
+      0.55776,
+      0.55493,
+      0.57002,
+      0.55291,
+      0.5585,
+      0.56927,
+      0.55608,
+      0.54992,
+      0.54816
+    ]
+  },
+  "test": {
+    "n_selected": 416,
+    "n_total": 596,
+    "selected_by_venue": {
+      "cav": 142,
+      "kr": 136,
+      "lics": 101,
+      "lpnmr": 37
+    }
+  },
+  "submission": {
+    "path": "submissions/exp002_logreg_text.csv",
+    "sha256": "84a1f29f739b6c65006c003a2c0447dc292816663a65fc123918742afd0bf545"
+  },
+  "env": {
+    "python": "3.14.5",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  }
+}
