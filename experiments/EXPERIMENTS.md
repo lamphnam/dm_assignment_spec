@@ -97,3 +97,86 @@ Tóm tắt trong `handoff/claude/20261114-score-research.md`. Kết quả máy �
 | + emb × venue w=1 | 0.6164 ± 0.0053 | 0.787 |
 | + emb × venue w=2 | 0.6105 ± 0.0088 | 0.782 |
 → Không giúp (trong nhiễu).
+
+## EXP-004 (research) — fine-tune encoder TRONG từng fold — `research/finetune_cv.py`, `research/finetune_combine.py`
+- **Ngày:** 2026-11-14 (đêm, 03:30–05:00 giờ VN). **Môi trường:** `.venv-gpu` (torch 2.15.0+cu132, RTX 3050 Laptop 4 GB),
+  các gói khác cùng phiên bản `requirements.txt`. `.venv` (CPU) giữ nguyên để tái lập EXP-003.
+- **Giả thuyết:** điểm mất ở bước chọn (AUC 0.788) và model tuyến tính trên embedding đóng băng đã bão hoà;
+  fine-tune encoder có giám sát sẽ tăng AUC P(y>1).
+- **Chống leak:** mỗi fold load lại checkpoint pretrained và fine-tune **chỉ trên phần train của fold**; fold validation đóng vai test.
+- **Protocol:** folds của `src/validation.py`, chấm bài không thuộc `iclp`, ngưỡng chọn trung thực (chọn trên các fold còn lại cùng seed,
+  lưới 0.30–0.80 bước 0.025). Δ là chênh lệch **ghép cặp** từng fold so với A = exp003 (cùng fold, cùng cách chọn ngưỡng).
+- **Phương pháp:** input `"<venue> <year>: <title>"`; CE = encoder + head tuyến tính, BCE trên y>1, 4 epoch, lr 2e-5 (head 1e-3), batch 32;
+  CE5 = head 5 lớp, softmax CE trên nhãn 1..5 (cho cả P(y>1) và E[gain]); SF = SetFit (cặp contrastive theo y>1, CosineSimilarityLoss) + logistic head.
+  Ghép: P(y>1) = sigmoid(trung bình logit); thứ tự = trung bình E[gain].
+- **Tốc độ:** GPU nhanh hơn CPU ~15–30 lần (SetFit 1.6 → 0.054 s/bước; CE 0.69 → 0.046 s/bước). Một fold MiniLM (SF+CE) ~95 s.
+
+### Seed 0 (5 fold) — từng thành phần (A = 0.6157 ± 0.0078, AUC 0.788)
+| Biến thể | AUC | Score | Δ |
+|---|---:|---:|---:|
+| F0 MiniLM đóng băng + logistic head (tham chiếu) | 0.732 | 0.5940 | −0.022 |
+| SF MiniLM 10 vòng / A+SF | 0.755 / 0.796 | 0.6191 / 0.6199 | +0.003 / +0.004 |
+| SF 1 vòng, 2 vòng (A+SF) | 0.790 / 0.792 | 0.6155 / 0.6164 | −0.000 / +0.001 |
+| CE MiniLM 2 / 4 / 8 epoch (A+CE) | 0.796 / 0.800 / 0.801 | 0.6180 / 0.6214 / 0.6232 | +0.002 / +0.006 / +0.008 |
+| CE MiniLM không tiền tố venue/year (A+CE) | 0.802 | 0.6215 | +0.006 |
+| CE riêng MiniLM / MPNet / SPECTER / SciNCL | 0.788 / 0.795 / 0.786 / 0.786 | 0.6216 / 0.6216 / 0.6155 / 0.6144 | +0.006 / +0.006 / −0.000 / −0.001 |
+| A+CE MiniLM / MPNet / SPECTER / SciNCL | 0.800 / 0.805 / 0.801 / 0.801 | 0.6214 / 0.6222 / 0.6186 / 0.6241 | +0.006 / +0.007 / +0.003 / +0.008 |
+| A+CE5 MiniLM / MPNet | 0.801 / 0.800 | 0.6137 / 0.6237 | −0.002 / +0.008 |
+| Chỉ đổi thứ tự: eg trung bình A + CE5 (MiniLM / MPNet) | 0.788 | 0.6180 / 0.6178 | +0.002 / +0.002 |
+| A[CE] / A[SF]: thay khối embedding trong exp003 bằng embedding đã fine-tune | 0.76–0.79 | 0.611–0.619 | −0.004…+0.003 |
+→ CE tốt hơn SetFit; SetFit nhiễu và không ổn định theo số vòng. Thay embedding trong exp003 không giúp (feature train bị tách quá mức).
+→ Score theo fold nhiễu hơn AUC nhiều: hai biến thể cùng AUC 0.801 có thể lệch 0.008 Score.
+
+### Seed 0 — tổ hợp (`research/finetune_combine.py`)
+| Tổ hợp | AUC | Score | Δ (SE), số fold tốt hơn |
+|---|---:|---:|---:|
+| A + 3 CE (MiniLM, MPNet, SPECTER) | 0.808 | 0.6228 | +0.007 (0.001), 5/5 |
+| 3 CE, không A | 0.805 | 0.6260 | +0.010 (0.001), 5/5 |
+| Chỉ thứ tự: eg = trung bình A + CE5 MiniLM + CE5 MPNet | 0.788 | 0.6183 | +0.003 (0.0005), 5/5 |
+| **C1:** A + 3 CE, eg trung bình | 0.808 | 0.6253 | +0.010 (0.002), 5/5 |
+| **C2:** 3 CE (không A), eg trung bình | 0.805 | 0.6305 | +0.015 (0.002), 5/5 |
+| C1 với 4 CE (+SciNCL) | 0.809 | 0.6312 | +0.016 (0.003), 5/5 |
+| C2 với 4 CE (+SciNCL) | 0.806 | 0.6276 | +0.012 (0.003), 5/5 |
+→ C1 và C2 đổi chỗ cho nhau khi thêm/bớt một encoder: chênh lệch giữa chúng là nhiễu (±0.005). Đây là tổ hợp tốt nhất trong nhiều
+tổ hợp thử trên seed 0, nên **lạc quan**; C1/C2 được chốt trước khi chạy seed 1–2 để xác nhận.
+
+### Xác nhận seed 1–2 (10 fold mới), cấu hình chốt trước: CE 4 epoch cho 4 encoder, CE5 cho MiniLM/MPNet
+A (seed 1–2) = 0.6179, AUC 0.791.
+| Thành phần | A+CE AUC | A+CE Δ (seed 1–2) | Δ seed 0 |
+|---|---:|---:|---:|
+| MiniLM | 0.807 | +0.0060 | +0.0057 |
+| MPNet | 0.802 | +0.0064 | +0.0065 |
+| SPECTER | 0.802 | +0.0088 | +0.0029 |
+| SciNCL | 0.807 | +0.0071 | +0.0084 |
+| Chỉ thứ tự (eg + CE5 MiniLM / MPNet) | 0.791 | +0.0000 / +0.0009 | +0.0023 / +0.0021 |
+→ Bước chọn: cải thiện **lặp lại** trên seed mới. Bước thứ tự (CE5): gần 0, không xác nhận được.
+
+### 15 fold (seed 0, 1, 2) — `research/finetune_combine.py`, A = 0.6172 (ngưỡng trung thực), AUC 0.790
+| Tổ hợp | AUC | Score | Δ paired (SE), fold tốt hơn |
+|---|---:|---:|---:|
+| A + 4 CE | 0.810 | 0.6296 | +0.0124 (0.0021), 15/15 |
+| **C1 = A + 4 CE, eg trung bình A + CE5 MiniLM + CE5 MPNet** | **0.810** | **0.6307** | **+0.0135 (0.0022), 15/15** |
+| C2 = 4 CE (không A), eg trung bình | 0.808 | 0.6280 | +0.0108 (0.0023), 13/15 |
+| Chỉ thứ tự (eg trung bình) | 0.790 | 0.6183 | +0.0011 (0.0004), 12/15 |
+| C1 + bagging (mỗi encoder thêm 1 lần fine-tune seed khác) | 0.8105 | 0.6277 | +0.0105 (0.0018), 14/15 |
+→ Bagging không giúp (AUC bão hoà ~0.81). Chọn **C1 không bagging = model `ft_ens_v1`**.
+
+Theo đúng quy trình của `run_experiment.py` (ngưỡng chọn trên chính 15 fold, lưới 0.05) áp lên OOF research
+(`scripts/finalize_from_oof.py`): **A = 0.6178 ± 0.0097 (trùng khít EXP-003)**; `ft_ens_v1` = **0.6302 ± 0.0091** (Q 0.523, R 0.796),
+ngưỡng 0.60, **Δ +0.0123**; bản bagging 0.6306 ± 0.0084. Chưa đạt mức +0.015 đặt ra ban đầu; sinh viên đồng ý vẫn đề cử bản tốt nhất.
+
+## EXP-004 — `ft_ens_v1` = C1 (model production)
+- **Ngày:** 2026-11-14 (05:20 giờ VN)   **Model:** `ft_ens_v1` (`src/models.py::FineTuneEnsemble`, huấn luyện ở `src/finetune.py`)
+- **Lệnh:** `.venv-gpu\Scripts\python.exe -m scripts.finalize_from_oof --model ft_ens_v1 --name exp004_ft_ens_v1 --parity`
+  (CV lấy từ OOF research 15 fold, chọn ngưỡng đúng như `run_experiment.py`; fit cuối trên toàn train bằng code production).
+- **Thành phần:** chọn bài = sigmoid(trung bình logit) của exp003 (binary head) + CE fine-tune của MiniLM, MPNet, SPECTER, SciNCL;
+  thứ tự = trung bình E[gain] của exp003 + CE5 MiniLM + CE5 MPNet. Mỗi fit = 1 logistic exp003 + 6 lần fine-tune (~4 phút trên RTX 3050).
+- **Kết quả:** CV **0.6302 ± 0.0091** (Q 0.523, R 0.796), ngưỡng 0.60; EXP-003 cùng quy trình 0.6178 ± 0.0097 → **+0.0123**.
+  AUC P(y>1) 0.790 → 0.810. Paired honest: +0.0135 (SE 0.0022), tốt hơn ở 15/15 fold.
+- **Parity code production và code research** (seed 0, fold 0): AUC 0.815 = 0.815, Score 0.6282 = 0.6282, tương quan pb = 1.0.
+- **Test:** chọn 353/596 (cav 118, kr 115, lics 84, lpnmr 36); mean pb 0.635. So với EXP-003: cùng chọn 311, bỏ 52, thêm 42;
+  Spearman thứ tự trong phần chung 0.913.
+- **File:** `submissions/exp004_ft_ens_v1.csv`, SHA-256 `a89e78ee4b4f…`, validator VALID. `outputs/exp004_ft_ens_v1/report.json`.
+- **Có nộp không?** Đề cử nộp (lượt #3); sinh viên tự nộp.
+- **Phương pháp đã học (FR-04):** classification. Fine-tune encoder là phần mở rộng ngoài môn, cần trích dẫn: sentence-transformers
+  (Reimers & Gurevych, 2019), SetFit (Tunstall et al., 2022, đã thử, không dùng), các checkpoint HF trong `src/embeddings.py`.

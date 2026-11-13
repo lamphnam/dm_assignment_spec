@@ -180,4 +180,56 @@ def _embed_v1(seed: int = 0):
     return EmbedLogReg(embs=("minilm", "mpnet", "specter"), ew=2.0, seed=seed)
 
 
-MODELS = {"venue_mean": VenueMean, "logreg_text": LogRegText, "embed_v1": _embed_v1}
+def _logit(p):
+    p = np.clip(p, 1e-6, 1 - 1e-6)
+    return np.log(p / (1 - p))
+
+
+class FineTuneEnsemble:
+    """Classification (FR-04) with fine-tuned sentence encoders (src/finetune.py), built on exp003.
+
+    - selection  P(label>1) = sigmoid(mean of logits) of binary fine-tuned encoders `sel`
+                 (+ exp003's binary head when use_a=True)
+    - ordering   expected gain = mean of exp003's E[gain] and the E[gain] of 5-class fine-tuned encoders `eg`
+    Every component is fitted on the data given to fit() only (a CV training fold, or the full train).
+    Needs PyTorch; a CUDA GPU makes it practical (~2 min per fit on an RTX 3050 Laptop, much longer on CPU).
+    """
+
+    def __init__(self, sel=("minilm", "mpnet", "specter", "scincl"), eg=("minilm", "mpnet"), use_a: bool = True,
+                 n_bag: int = 1, seed: int = 0):
+        self.sel, self.eg, self.use_a, self.n_bag, self.seed = tuple(sel), tuple(eg), use_a, n_bag, seed
+        self.name = (f"ft_ens[sel={'+'.join(self.sel)}{'+A' if use_a else ''} x{n_bag};"
+                     f"eg=A+{'+'.join(self.eg)}]")
+
+    def fit(self, df: pd.DataFrame) -> "FineTuneEnsemble":
+        from src.finetune import FineTunedEncoder, texts_of
+        self.a_ = EmbedLogReg(seed=0).fit(df)
+        tx, y = texts_of(df), df["label"].to_numpy()
+        # bag b uses fine-tuning seed  seed + 100*b  (different initialisation of the head and batch order)
+        self.sel_ = [FineTunedEncoder(k, n_out=1, seed=self.seed + 100 * b).fit(tx, (y > 1).astype(int))
+                     for k in self.sel for b in range(self.n_bag)]
+        self.eg_ = [FineTunedEncoder(k, n_out=5, seed=self.seed).fit(tx, y - 1) for k in self.eg]
+        return self
+
+    def predict(self, df: pd.DataFrame):
+        from src.finetune import texts_of
+        eg_a, pb_a = self.a_.predict(df)
+        tx = texts_of(df)
+        logits = [_logit(m.predict(tx)) for m in self.sel_] + ([_logit(pb_a)] if self.use_a else [])
+        pb = 1.0 / (1.0 + np.exp(-np.mean(logits, axis=0)))
+        eg = np.mean([eg_a] + [m.predict(tx) @ GAIN for m in self.eg_], axis=0)
+        return eg, pb
+
+
+def _ft_ens_v1(seed: int = 0):
+    """EXP-004 candidate C1: selection = exp003 + 4 fine-tuned binary encoders; ordering = exp003 + 2 CE5 encoders."""
+    return FineTuneEnsemble(use_a=True, n_bag=1, seed=seed)
+
+
+def _ft_ens_v1_bag2(seed: int = 0):
+    """C1 with two fine-tuning seeds per selection encoder."""
+    return FineTuneEnsemble(use_a=True, n_bag=2, seed=seed)
+
+
+MODELS = {"venue_mean": VenueMean, "logreg_text": LogRegText, "embed_v1": _embed_v1,
+          "ft_ens_v1": _ft_ens_v1, "ft_ens_v1_bag2": _ft_ens_v1_bag2}

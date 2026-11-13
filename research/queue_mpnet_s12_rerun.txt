@@ -1,0 +1,2 @@
+# rerun after OOM fix (optimizer/scheduler cycle)
+mpnet s12 --methods ce ce5 --seeds 1 2 --no-refit

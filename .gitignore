@@ -10,6 +10,7 @@ kaggle.json
 
 # --- Môi trường / cache ---
 .venv/
+.venv-gpu/
 venv/
 __pycache__/
 *.pyc

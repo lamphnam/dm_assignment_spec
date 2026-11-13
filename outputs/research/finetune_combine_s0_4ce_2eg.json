@@ -1,0 +1,94 @@
+{
+  "specs": [
+    "finetune_minilm:CE",
+    "finetune_mpnet_ce:CE",
+    "finetune_specter_ce:CE",
+    "finetune_scincl_ce:CE"
+  ],
+  "eg_specs": [
+    "finetune_minilm_ce5:CE5own",
+    "finetune_mpnet_ce5:CE5own"
+  ],
+  "results": {
+    "A": {
+      "auc": 0.7877269142908243,
+      "honest": 0.6157210106018061,
+      "delta": 0.0,
+      "delta_se": 0.0,
+      "folds_better": 0,
+      "n_folds": 5
+    },
+    "A+finetune_minilm:CE": {
+      "auc": 0.8002320968384428,
+      "honest": 0.6213799368774267,
+      "delta": 0.005658926275620613,
+      "delta_se": 0.0008291771908968628,
+      "folds_better": 5,
+      "n_folds": 5
+    },
+    "A+finetune_mpnet_ce:CE": {
+      "auc": 0.8049380533131723,
+      "honest": 0.6222316017471263,
+      "delta": 0.006510591145320377,
+      "delta_se": 0.0010732596077231398,
+      "folds_better": 5,
+      "n_folds": 5
+    },
+    "A+finetune_specter_ce:CE": {
+      "auc": 0.800513580307132,
+      "honest": 0.6185921361806833,
+      "delta": 0.002871125578877409,
+      "delta_se": 0.0012048074839386596,
+      "folds_better": 4,
+      "n_folds": 5
+    },
+    "A+finetune_scincl_ce:CE": {
+      "auc": 0.8004719166890227,
+      "honest": 0.6241329036742297,
+      "delta": 0.00841189307242376,
+      "delta_se": 0.0026444223351825987,
+      "folds_better": 4,
+      "n_folds": 5
+    },
+    "A+all": {
+      "auc": 0.8084814932240729,
+      "honest": 0.6287404246273404,
+      "delta": 0.013019414025534503,
+      "delta_se": 0.0022652068333367916,
+      "folds_better": 5,
+      "n_folds": 5
+    },
+    "all (no A)": {
+      "auc": 0.8060375663569332,
+      "honest": 0.6252525112035426,
+      "delta": 0.009531500601736732,
+      "delta_se": 0.0026466783232684025,
+      "folds_better": 5,
+      "n_folds": 5
+    },
+    "A, eg avg": {
+      "auc": 0.7877269142908243,
+      "honest": 0.6183452182740364,
+      "delta": 0.0026242076722304388,
+      "delta_se": 0.0005113614382177667,
+      "folds_better": 5,
+      "n_folds": 5
+    },
+    "A+all, eg avg": {
+      "auc": 0.8084814932240729,
+      "honest": 0.6312054201409502,
+      "delta": 0.015484409539144161,
+      "delta_se": 0.002578015361853467,
+      "folds_better": 5,
+      "n_folds": 5
+    },
+    "all (no A), eg avg": {
+      "auc": 0.8060375663569332,
+      "honest": 0.6275663100140036,
+      "delta": 0.011845299412197674,
+      "delta_se": 0.0030250503655882984,
+      "folds_better": 5,
+      "n_folds": 5
+    }
+  }
+}

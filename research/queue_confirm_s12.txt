@@ -1,0 +1,8 @@
+# Confirmation on seeds 1 and 2 (10 more folds) of the pre-specified configs (4 epochs, venue/year prefix).
+# Components fixed BEFORE seeing seeds 1-2 (decided 04:06 from seed-0 results):
+#   CE (binary) for minilm, mpnet, specter, scincl; CE5 (5-class) for minilm, mpnet.
+# Format per line: <enc> <tag> <extra args...>   (bash research/finetune_queue.sh research/queue_confirm_s12.txt)
+minilm  s12 --methods ce ce5 --seeds 1 2 --no-refit
+mpnet   s12 --methods ce ce5 --seeds 1 2 --no-refit
+specter s12 --methods ce --seeds 1 2 --no-refit
+scincl  s12 --methods ce --seeds 1 2 --no-refit

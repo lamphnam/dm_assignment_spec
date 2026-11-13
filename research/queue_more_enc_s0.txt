@@ -1,0 +1,2 @@
+# More encoder diversity for the CE ensemble, seed-0 folds (scincl = BERT-base, scientific domain; cached since sweep4).
+scincl ce --methods ce --no-refit

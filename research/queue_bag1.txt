@@ -1,0 +1,5 @@
+# Bagging: a second fine-tuning run (different seed) of each CE encoder, all 15 folds. Variance reduction, not a new config.
+minilm  bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit
+mpnet   bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit
+specter bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit
+scincl  bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit

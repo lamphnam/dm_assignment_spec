@@ -43,6 +43,14 @@ def cross_validate(model_cls, train, seeds):
     return out
 
 
+def _torch_env() -> dict:
+    """torch version / device, only if the model imported torch (fine-tuned models)."""
+    t = sys.modules.get("torch")
+    if t is None:
+        return {}
+    return {"torch": t.__version__, "device": t.cuda.get_device_name(0) if t.cuda.is_available() else "cpu"}
+
+
 def summarise(cv, threshold):
     s = np.array([score_arrays(f["ids"], to_priority(f["eg"], f["pw"], threshold), f["y"]) for f in cv])
     return {"score_mean": s[:, 0].mean(), "score_std": s[:, 0].std(ddof=1), "Q_mean": s[:, 1].mean(),
@@ -91,7 +99,8 @@ def main() -> int:
         "test": {"n_selected": int((priority > 0).sum()), "n_total": len(priority),
                  "selected_by_venue": test.loc[priority > 0, "venue"].value_counts().to_dict()},
         "submission": {"path": str(sub_path.relative_to(ROOT)).replace("\\", "/"), "sha256": sha256(sub_path)},
-        "env": {"python": platform.python_version(), "numpy": np.__version__, "sklearn": sklearn.__version__},
+        "env": {"python": platform.python_version(), "numpy": np.__version__, "sklearn": sklearn.__version__,
+                **_torch_env()},
     }
     (out_dir / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
 

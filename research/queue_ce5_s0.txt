@@ -1,0 +1,3 @@
+# CE5 (5-class head: selection + ordering) on seed-0 folds.
+minilm ce5 --methods ce5 --no-refit
+mpnet  ce5 --methods ce5 --no-refit
