@@ -1,0 +1,205 @@
+{
+  "A1_per_venue": [
+    {
+      "venue": "cav",
+      "n": 657,
+      "mean_pb": 0.5447,
+      "actual": 0.5434,
+      "auc": 0.7732,
+      "spearman_eg": 0.5606
+    },
+    {
+      "venue": "kr",
+      "n": 661,
+      "mean_pb": 0.7406,
+      "actual": 0.7322,
+      "auc": 0.773,
+      "spearman_eg": 0.5215
+    },
+    {
+      "venue": "lics",
+      "n": 604,
+      "mean_pb": 0.5355,
+      "actual": 0.5232,
+      "auc": 0.7208,
+      "spearman_eg": 0.4615
+    },
+    {
+      "venue": "lpnmr",
+      "n": 116,
+      "mean_pb": 0.8126,
+      "actual": 0.819,
+      "auc": 0.8972,
+      "spearman_eg": 0.7212
+    }
+  ],
+  "A3_plugin": {
+    "fixed_055": 0.6157,
+    "honest": 0.6157,
+    "plugin": 0.6156,
+    "plugin_expected": 0.6237
+  },
+  "A4_headroom": [
+    {
+      "beta": "0.0",
+      "auc": "0.7877",
+      "score": "0.6157",
+      "spearman": NaN
+    },
+    {
+      "beta": "0.25",
+      "auc": "0.8502",
+      "score": "0.6414",
+      "spearman": NaN
+    },
+    {
+      "beta": "0.5",
+      "auc": "0.8993",
+      "score": "0.6621",
+      "spearman": NaN
+    },
+    {
+      "beta": "0.75",
+      "auc": "0.9356",
+      "score": "0.6777",
+      "spearman": NaN
+    },
+    {
+      "beta": "1.0",
+      "auc": "0.9607",
+      "score": "0.6918",
+      "spearman": NaN
+    },
+    {
+      "beta": "1.5",
+      "auc": "0.987",
+      "score": "0.714",
+      "spearman": NaN
+    },
+    {
+      "beta": "order \u03b3=0.25",
+      "auc": "0.7877",
+      "score": "0.6282",
+      "spearman": "0.8063"
+    },
+    {
+      "beta": "order \u03b3=0.5",
+      "auc": "0.7877",
+      "score": "0.634",
+      "spearman": "0.9256"
+    }
+  ],
+  "A6_words": {
+    "cav": {
+      "label1": [
+        "cav",
+        "july",
+        "part",
+        "aided",
+        "conference",
+        "computer",
+        "international",
+        "proceedings",
+        "th",
+        "ii"
+      ],
+      "worth": [
+        "neural",
+        "network",
+        "networks",
+        "deep",
+        "program",
+        "markov",
+        "synthesis",
+        "data-driven",
+        "cooperative",
+        "formally"
+      ]
+    },
+    "lics": {
+      "label1": [
+        "lics",
+        "acm",
+        "annual",
+        "symposium",
+        "ieee",
+        "quantum",
+        "science",
+        "homotopy",
+        "june",
+        "effectful"
+      ],
+      "worth": [
+        "problems",
+        "constructive",
+        "first",
+        "order",
+        "graph",
+        "probabilistic",
+        "distributions",
+        "interpretations",
+        "logic",
+        "geometry"
+      ]
+    },
+    "kr": {
+      "label1": [
+        "principles",
+        "kr",
+        "proceedings",
+        "international",
+        "conference",
+        "th",
+        "workshop",
+        "secure",
+        "bipolar",
+        "november"
+      ],
+      "worth": [
+        "description",
+        "argumentation",
+        "logics",
+        "temporal",
+        "expressive",
+        "belief",
+        "owl",
+        "preferences",
+        "revision",
+        "reasoning"
+      ]
+    },
+    "lpnmr": {
+      "label1": [
+        "lpnmr",
+        "nonmonotonic",
+        "th",
+        "international",
+        "proceedings",
+        "conference",
+        "reasoning",
+        "defeasible",
+        "logic",
+        "hybrid"
+      ],
+      "worth": [
+        "asp",
+        "answer",
+        "set",
+        "sets",
+        "asp-based",
+        "frameworks",
+        "explanations",
+        "system",
+        "forgetting",
+        "programs"
+      ]
+    }
+  },
+  "A8_test": {
+    "mean_pb": 0.6171001362573912,
+    "n_sel_055": 363,
+    "plugin_m": 366,
+    "plugin_expected": 0.6209267291330466,
+    "expected_055": 0.6208951017603258
+  }
+}
