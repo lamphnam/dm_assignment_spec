@@ -1,2 +1,4 @@
 # Submitted CSVs must stay byte-identical (Rules §5: preserve the exact submitted CSV); no EOL conversion.
 submissions/*.csv -text
+# Shell scripts run under Git Bash: CRLF line endings would break them (research/finetune_queue.sh).
+*.sh text eol=lf
