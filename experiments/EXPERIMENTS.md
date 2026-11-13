@@ -177,6 +177,7 @@ ngưỡng 0.60, **Δ +0.0123**; bản bagging 0.6306 ± 0.0084. Chưa đạt m�
 - **Test:** chọn 353/596 (cav 118, kr 115, lics 84, lpnmr 36); mean pb 0.635. So với EXP-003: cùng chọn 311, bỏ 52, thêm 42;
   Spearman thứ tự trong phần chung 0.913.
 - **File:** `submissions/exp004_ft_ens_v1.csv`, SHA-256 `a89e78ee4b4f…`, validator VALID. `outputs/exp004_ft_ens_v1/report.json`.
-- **Có nộp không?** Đề cử nộp (lượt #3); sinh viên tự nộp.
+- **Có nộp không?** Có, lượt #3 (sinh viên tự nộp, 2026-11-13 22:24 UTC). **Public 0.66918** (EXP-003: 0.64656; +0.0226),
+  hạng 8 lúc nộp. CV lệch LB +0.039 (EXP-003: +0.029); Public chỉ 298 bài, std ~0.015–0.02, nên mức tăng Public lớn hơn CV là bình thường.
 - **Phương pháp đã học (FR-04):** classification. Fine-tune encoder là phần mở rộng ngoài môn, cần trích dẫn: sentence-transformers
   (Reimers & Gurevych, 2019), SetFit (Tunstall et al., 2022, đã thử, không dùng), các checkpoint HF trong `src/embeddings.py`.
