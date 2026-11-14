@@ -1,0 +1,9 @@
+# P2a (score-plan 2026-11-14, session 2): more encoder diversity for the CE ensemble. Seed-0 folds = SCREENING only.
+# Same CE recipe as EXP-004 (4 epochs, lr 2e-5, "<venue> <year>: <title>", e5 adds "query: "). Fine-tuned inside each fold.
+e5_base       ce --methods ce --no-refit
+bge_base      ce --methods ce --no-refit
+gte_base      ce --methods ce --no-refit
+specter2      ce --methods ce --no-refit
+minilm_l12    ce --methods ce --no-refit
+distilroberta ce --methods ce --no-refit
+scibert       ce --methods ce --no-refit

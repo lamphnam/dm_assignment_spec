@@ -1,0 +1,6 @@
+# Ordering lever (EXP-004 ordering = mean E[gain] of A + CE5 MiniLM + CE5 MPNet; ordering-only gain was +0.0011, 12/15).
+# One pre-declared candidate (20:35): eg = mean E[gain] of A + CE5 of ALL six encoders below and above. Seed-0 screening.
+specter  ce5 --methods ce5 --no-refit
+scincl   ce5 --methods ce5 --no-refit
+specter2 ce5 --methods ce5 --no-refit
+e5_base  ce5 --methods ce5 --no-refit

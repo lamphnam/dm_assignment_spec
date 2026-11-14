@@ -54,7 +54,8 @@ class FineTunedEncoder:
         import torch
         from sentence_transformers import SentenceTransformer
 
-        from src.embeddings import MODELS
+        from src.embeddings import MODELS, PREFIX
+        texts = [PREFIX.get(self.key, "") + t for t in texts]  # e5 input prefix; unchanged for the EXP-004 encoders
         dev = _device()
         torch.manual_seed(self.seed)
         torch.use_deterministic_algorithms(True, warn_only=True)
@@ -93,6 +94,9 @@ class FineTunedEncoder:
     def predict(self, texts: list[str]) -> np.ndarray:
         """n_out=1: P(label>1), shape (n,);  n_out=5: label distribution, shape (n, 5)."""
         import torch
+
+        from src.embeddings import PREFIX
+        texts = [PREFIX.get(self.key, "") + t for t in texts]
         dev = _device()
         self.model_.to(dev); self.head_.to(dev)
         with torch.no_grad():

@@ -3,6 +3,26 @@
 > Viết cho agent phiên sau (và sinh viên). Tài liệu này chỉ đề xuất hướng thử, kèm bằng chứng và ước lượng.
 > Các con số "kỳ vọng" là **phỏng đoán**, chưa đo. Kết quả thật ghi vào `experiments/EXPERIMENTS.md`.
 
+## 0. Trạng thái — cập nhật 2026-11-14 21:30 (phiên 2, chi tiết: `experiments/EXPERIMENTS.md`, mục "Sau EXP-004 — phiên 2")
+**Đã thử toàn bộ P1, P2a, P2b, P2c và P3a (bản không cần `peft`), cộng thêm feature `doi` và CE5 cho thứ tự. Không có gì tốt hơn EXP-004.**
+Mọi Δ so với EXP-004 (ghép cặp, 15 fold) nằm trong khoảng −0.006…+0.001. Bước chọn bài kẹt ở AUC ≈ 0.81.
+| Hướng | Kết quả (Δ honest vs EXP-004) | Trạng thái |
+|---|---|---|
+| P1a stacking/calibration (ST1–3) | −0.004…−0.006 (15 fold); run_exp −0.002…−0.003 | ✗ đóng |
+| P1b thứ tự pb_ens × E[gain\|y>1] (O1/O2) | −0.0000 / −0.0010 | ✗ đóng |
+| P2a +7 encoder base (e5, bge, gte, specter2, scibert, MiniLM-L12, DistilRoBERTa) | C_sel −0.0008, C_all −0.0015 (seed 1–2: −0.0020 / −0.0009) | ✗ đóng |
+| P2b authors trong text / lr 5e-5 | −0.002 (seed 0) | ✗ đóng |
+| P2c fine-tune với abstract (chỉ train) | CE AUC 0.788 → 0.745; −0.004 | ✗ đóng; **không cần hỏi Q-07 cho abstract** |
+| P3a-lite e5-large/bge-large, train 8 lớp trên | −0.004 (seed 0) | ✗ đóng |
+| Feature `doi` (series DOI) | −0.0003 (run_exp +0.0003) | ✗ đóng |
+| Thêm 4 CE5 cho thứ tự | +0.0001 (seed 0) | ✗ đóng |
+| Metadata S2 (citation, publicationTypes), **chỉ train** | AUC không đổi (0.790); +0.0011 / run_exp −0.0003 | ✗ đóng; không cần hỏi Q-07 cho metadata |
+| P2e loss xếp hạng, P3b transductive | chưa thử (P3b cần hỏi giảng viên; thứ tự đã lấy ~74% đòn bẩy, khoảng trống tối đa +0.019) | còn mở, kỳ vọng thấp |
+**Khuyến nghị:** dừng tối ưu điểm theo title. Dồn thời gian cho báo cáo + README (FR-07). Abstract và metadata S2 đã được đo trên train và
+**không** có tín hiệu, nên Q-07 không còn đáng hỏi vì lý do điểm. Hai đòn bẩy còn lại đều cần giảng viên quyết, agent không tự làm:
+**Q-10** (`id`/thứ tự trong (venue, year) có tương quan với nhãn, docs/05 §3; là artifact nên rủi ro integrity) và **P3b** transductive
+(MLM / label propagation có title test; kỳ vọng nhỏ vì kNN đã có trong A).
+
 ## 1. Đang ở đâu
 | | AUC P(y>1) | CV (quy trình run_experiment) | Public | Ghi chú |
 |---|---:|---:|---:|---|
@@ -32,6 +52,7 @@
   Phải **fit lồng trong fold**: trên OOF 15 fold, fit stacker bằng 4 fold, áp vào fold thứ 5, cùng seed.
 - Dữ liệu: `outputs/research/finetune_*_oof.pkl`. Ghép bằng `scripts/finalize_from_oof.py::ensemble_oof` hoặc `research/finetune_combine.py`.
 - Kỳ vọng +0.002…+0.005. Nếu tốt hơn thì sửa `FineTuneEnsemble` (cần lưu stacker) và tạo `ft_ens_v2`.
+- **→ ĐÃ THỬ (`research/stack_cv.py`): âm.** Calibration đúng (mean pb 0.648 → 0.614) nhưng Score −0.004…−0.006; ngưỡng đã tune nên calibration không giúp.
 
 **P1b. Thứ tự dùng P(y>1) tốt hơn.**
 - Hiện thứ tự = E[gain] của EXP-003, trong đó phần P(y>1) đến từ head multinomial yếu (AUC khoảng 0.79).
@@ -39,6 +60,7 @@
   - `pm` = P(y>1) của head multinomial. Cột này có trong `outputs/research/oof_exp003_seed0.pkl` nhưng **không có** trong cache `oof_A_s*_f*.pkl` (chỉ có eg, pb).
   - Muốn chạy đủ 15 fold thì tính lại OOF của EXP-003 kèm phân phối 5 lớp: chạy CPU, khoảng 6 giây/fold.
 - Đòn bẩy thứ tự còn trống khoảng +0.0125. Kỳ vọng +0.002…+0.006.
+- **→ ĐÃ THỬ: O1 −0.0000, O2 −0.0010.** Đo lại khoảng trống: thứ tự hoàn hảo chỉ +0.019, thứ tự hiện tại đã lấy ~74%.
 
 ### P2 — GPU, khung có sẵn (`research/finetune_cv.py` + `research/finetune_queue.sh`)
 **P2a. Thêm encoder đa dạng cho CE.**
@@ -47,19 +69,25 @@
 - Phải thêm vào `src/embeddings.py::MODELS`. Chưa kiểm tra tải về và VRAM; cỡ base (110M) vừa 4 GB với fused AdamW.
 - Bằng chứng: 1 → 3 → 4 encoder cho AUC 0.800 → 0.805/0.808 → 0.810 (bão hoà dần). Kỳ vọng +0.002…+0.005 nếu đủ khác biệt.
 - Chi phí: khoảng 5 phút/encoder trên seed 0, khoảng 10 phút cho seed 1–2.
+- **→ ĐÃ THỬ cả 6 + DistilRoBERTa, 15 fold: không đạt.** Từng encoder ngang hoặc hơn 4 encoder cũ (CE AUC 0.785–0.804), nhưng thêm vào
+  EXP-004 thì AUC tăng tới +0.004 mà Score không tăng (C_all −0.0015, C_sel −0.0008). Đã có trong `src/embeddings.py::MODELS`.
 
 **P2b. Siêu tham số và input của CE.**
 - lr 3e-5 / 5e-5; 6 epoch; label smoothing; thêm authors vào text (`"<venue> <year>: <title> | authors: …"`). Cần thêm cờ vào `texts_of`.
 - Mỗi biến thể chỉ chạy seed 0 trước. Kỳ vọng nhỏ (+0.001…+0.004); **rủi ro dò theo nhiễu**, nên giới hạn số biến thể.
+- **→ ĐÃ THỬ authors (MiniLM) và lr 5e-5 (MPNet): đều −0.002.** MPNet với input dài bị OOM ở batch 32 (cần gradient accumulation nếu muốn thử lại).
 
 **P2c. Fine-tune với abstract, chỉ trên train.**
 - Abstract qua embedding đóng băng không giúp, nhưng **chưa thử fine-tune**. Dữ liệu train có ở `data/external/s2_train.jsonl` (abstract 1502/2469, TLDR 1874).
 - Chỉ đo CV trên train. Nếu tăng ≥ +0.01 thì báo sinh viên gửi **Q-07** cho giảng viên kèm số liệu.
 - **Không** lấy dữ liệu ngoài cho test khi Q-07 chưa được trả lời. `research/fetch_s2.py` chặn test nếu không có `--i-asked-q07`.
+- **→ ĐÃ THỬ (MiniLM, max 256 token): CE AUC 0.788 → 0.745, rõ ràng kém hơn.** Không đạt mức +0.01, nên không có lý do hỏi Q-07 cho abstract.
 
 ### P3 — Cần cài thêm hoặc xác nhận luật trước
 - **P3a. LoRA cho encoder lớn** (bge-large/e5-large, 335M; full fine-tune không vừa 4 GB). Cần cài `peft` (hỏi sinh viên).
   Bản đóng băng của chúng không hơn ở sweep4, nên kỳ vọng thấp.
+  **→ ĐÃ THỬ bản không cần `peft`** (`--freeze-below 16`: chỉ train 8 lớp trên, phần đóng băng lưu bf16): e5-large CE AUC 0.792,
+  bge-large 0.789; thêm vào EXP-004 −0.004. Không hơn cỡ base, nên LoRA đầy đủ khó mà khác.
 - **P3b. Transductive** (MLM domain adaptation trên title train+test, label propagation trên đồ thị kNN có test).
   Phải công khai theo NFR-05. **Không pseudo-label test** khi chưa hỏi giảng viên (AGENTS.md: không tự gán nhãn test).
 - **P3c. Dữ liệu dblp/proceedings của nhóm trưởng** (`leader_csv_file/proceedings*.csv`): là dữ liệu ngoài, nên với test thì bị Q-07 chặn.

@@ -1,0 +1,6 @@
+# Reruns after CUDA OOM on the 4 GB GPU (long inputs, batch 32): cap the sequence length.
+mpnet    ce_auth  --methods ce --no-refit --text authors --max-len 128
+mpnet    ce_abs128 --methods ce --no-refit --text abstract --max-len 128
+# P3a-lite rerun: frozen part (embeddings + bottom 16 layers) kept in bf16 to fit 4 GB
+e5_large  ce_top8 --methods ce --no-refit --freeze-below 16
+bge_large ce_top8 --methods ce --no-refit --freeze-below 16

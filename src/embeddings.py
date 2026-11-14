@@ -20,8 +20,16 @@ MODELS = {
     "e5_large": "intfloat/e5-large-v2",
     "gte_large": "thenlper/gte-large",
     "scincl": "malteos/scincl",
+    # base-size candidates for fine-tuning (score-plan P2a, 2026-11-14)
+    "e5_base": "intfloat/e5-base-v2",
+    "bge_base": "BAAI/bge-base-en-v1.5",
+    "gte_base": "thenlper/gte-base",
+    "specter2": "allenai/specter2_base",
+    "scibert": "allenai/scibert_scivocab_uncased",
+    "minilm_l12": "sentence-transformers/all-MiniLM-L12-v2",
+    "distilroberta": "sentence-transformers/all-distilroberta-v1",
 }
-PREFIX = {"e5_large": "query: "}  # e5 expects an input prefix
+PREFIX = {"e5_large": "query: ", "e5_base": "query: "}  # e5 expects an input prefix
 
 
 def title_embeddings(df: pd.DataFrame, key: str = "minilm") -> np.ndarray:

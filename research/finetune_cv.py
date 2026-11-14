@@ -46,17 +46,59 @@ from src.validation import folds, scored_mask
 OUT = ROOT / "outputs" / "research"
 
 
+ENC_PREFIX = ""  # encoder-specific input prefix (e5: "query: "), set in main() from src/embeddings.py::PREFIX
+TEXT_MODE = "title"  # --text: title | authors | abstract | tldr (abstract/tldr: TRAIN-ONLY research, Q-07)
+_S2: dict = {}
+
+
+def _extra(df: pd.DataFrame) -> list[str]:
+    """Text appended after the title for --text authors/abstract/tldr ('' = nothing)."""
+    if TEXT_MODE == "authors":
+        return [(" | " + ", ".join(a)) if len(a) else "" for a in df["authors"]]
+    if TEXT_MODE in ("abstract", "tldr"):
+        if not _S2:  # S2 records of TRAIN papers only (research/fetch_s2.py); Test has none (Q-07 unanswered)
+            _S2.update({r["id"]: r for r in map(json.loads, (ROOT / "data" / "external" / "s2_train.jsonl")
+                                                .read_text(encoding="utf-8").splitlines())})
+        out = []
+        for i in df["id"]:
+            r = _S2.get(int(i), {})
+            x = (r.get("abstract") or r.get("tldr")) if TEXT_MODE == "abstract" else r.get("tldr")
+            out.append(f" | {x}" if x else "")
+        return out
+    return [""] * len(df)
+
+
 def texts_of(df: pd.DataFrame, prefix: bool) -> list[str]:
+    ex = _extra(df)
     if not prefix:
-        return df["title"].tolist()
-    return [f"{v} {y}: {t}" for v, y, t in zip(df["venue"], df["year"], df["title"])]
+        return [ENC_PREFIX + t + e for t, e in zip(df["title"], ex)]
+    return [f"{ENC_PREFIX}{v} {y}: {t}{e}" for v, y, t, e in zip(df["venue"], df["year"], df["title"], ex)]
 
 
 # ----------------------------------------------------------------------------------------------- encoder utils
+FREEZE_BELOW = 0  # --freeze-below N: freeze embeddings + transformer layers < N (large encoders on a 4 GB GPU)
+MAX_LEN = 0       # --max-len: cap model.max_seq_length (long abstract inputs)
+
+
 def load_encoder(enc: str, device: str):
     import torch
     from sentence_transformers import SentenceTransformer
-    return SentenceTransformer(EMB_MODELS[enc], device=device, model_kwargs={"torch_dtype": torch.float32})
+    m = SentenceTransformer(EMB_MODELS[enc], device=device, model_kwargs={"torch_dtype": torch.float32})
+    if MAX_LEN:
+        m.max_seq_length = MAX_LEN
+    if FREEZE_BELOW:
+        # frozen part stored in bf16 (its matmuls run in bf16 under autocast anyway): a 335M encoder in fp32 + AdamW
+        # states of the top layers did not fit the 4 GB GPU. Forward passes must then run under autocast (encode()).
+        am = m[0].auto_model
+        for mod in [am.embeddings] + list(am.encoder.layer[:FREEZE_BELOW]):
+            for p in mod.parameters():
+                p.requires_grad = False
+            mod.to(torch.bfloat16)
+    return m
+
+
+def trainable(model):
+    return [p for p in model.parameters() if p.requires_grad]
 
 
 def forward(model, texts, device):
@@ -66,6 +108,12 @@ def forward(model, texts, device):
 
 
 def encode(model, texts) -> np.ndarray:
+    if FREEZE_BELOW:  # mixed bf16/fp32 weights: needs autocast
+        import torch
+        with torch.autocast("cuda", dtype=torch.bfloat16):
+            E = model.encode(texts, batch_size=64, normalize_embeddings=True, show_progress_bar=False,
+                             convert_to_tensor=True)
+        return E.float().cpu().numpy()
     return model.encode(texts, batch_size=128, normalize_embeddings=True, show_progress_bar=False,
                         convert_to_numpy=True).astype(np.float32)
 
@@ -137,7 +185,7 @@ def train_ce(model, texts, y, seed, device, epochs=4, bs=32, lr=2e-5, head_lr=1e
     torch.manual_seed(seed)
     dim = model.get_embedding_dimension()
     head = torch.nn.Linear(dim, n_out).to(device)
-    opt = _adamw([{"params": model.parameters(), "lr": lr}, {"params": head.parameters(), "lr": head_lr}], lr, device)
+    opt = _adamw([{"params": trainable(model), "lr": lr}, {"params": head.parameters(), "lr": head_lr}], lr, device)
     rng = np.random.default_rng(seed)
     steps = epochs * math.ceil(len(y) / bs)
     sch = _schedule(opt, steps)
@@ -230,9 +278,18 @@ def main():
     ap.add_argument("--lr", type=float, default=2e-5)
     ap.add_argument("--seed-offset", type=int, default=0, help="changes the fine-tuning seed (for bagging runs)")
     ap.add_argument("--tag", default="")
+    ap.add_argument("--text", default="title", choices=["title", "authors", "abstract", "tldr"],
+                    help="what follows the title in the encoder input (abstract/tldr: train-only research)")
+    ap.add_argument("--freeze-below", type=int, default=0)
+    ap.add_argument("--max-len", type=int, default=0)
     a = ap.parse_args()
 
     import torch
+
+    from src.embeddings import PREFIX
+    global ENC_PREFIX, TEXT_MODE, FREEZE_BELOW, MAX_LEN
+    ENC_PREFIX = PREFIX.get(a.enc, "")  # empty for the EXP-004 encoders -> their texts are unchanged
+    TEXT_MODE, FREEZE_BELOW, MAX_LEN = a.text, a.freeze_below, a.max_len
     device = "cuda" if torch.cuda.is_available() else "cpu"
     prefix = not a.no_prefix
     name = f"finetune_{a.enc}{'_' + a.tag if a.tag else ''}"

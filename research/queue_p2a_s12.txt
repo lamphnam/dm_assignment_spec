@@ -1,0 +1,11 @@
+# P2a confirmation on seeds 1-2 (10 more folds). Decided 20:06 (2026-11-14), BEFORE the seed-0 results of 5/7 encoders
+# and before any seed-1/2 result: run ALL 7 new encoders (no selection decides what runs). Candidates locked:
+#   C_all = EXP-004 + all 7 new CE encoders (equal-weight mean logit)
+#   C_sel = EXP-004 + the new encoders whose seed-0 paired delta (EXP-004 + enc vs EXP-004, honest) is > 0
+e5_base       s12 --methods ce --seeds 1 2 --no-refit
+bge_base      s12 --methods ce --seeds 1 2 --no-refit
+gte_base      s12 --methods ce --seeds 1 2 --no-refit
+specter2      s12 --methods ce --seeds 1 2 --no-refit
+minilm_l12    s12 --methods ce --seeds 1 2 --no-refit
+distilroberta s12 --methods ce --seeds 1 2 --no-refit
+scibert       s12 --methods ce --seeds 1 2 --no-refit

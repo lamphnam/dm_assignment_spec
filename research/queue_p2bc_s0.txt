@@ -1,0 +1,11 @@
+# Seed-0 SCREENING, session 2 (2026-11-14 evening). Same CE recipe as EXP-004 unless stated.
+# P2b: input / hyper-parameters of CE (few variants on purpose: noise-chasing risk)
+minilm   ce_auth  --methods ce --no-refit --text authors
+mpnet    ce_auth  --methods ce --no-refit --text authors
+mpnet    ce_lr5   --methods ce --no-refit --lr 5e-5
+# P2c: fine-tune with abstract (fallback TLDR) -- TRAIN-ONLY measurement for Q-07; never used for Test
+minilm   ce_abs   --methods ce --no-refit --text abstract --max-len 256
+mpnet    ce_abs   --methods ce --no-refit --text abstract --max-len 256
+# P3a-lite (no new library): large encoders, embeddings + bottom 16 of 24 layers frozen, top 8 fine-tuned
+e5_large  ce_top8 --methods ce --no-refit --freeze-below 16
+bge_large ce_top8 --methods ce --no-refit --freeze-below 16
