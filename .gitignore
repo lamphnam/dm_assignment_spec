@@ -5,10 +5,7 @@
 # =====================================================================
 
 # --- Dữ liệu competition (CC BY-NC-SA 4.0; mỗi người tự tải bằng tài khoản Kaggle của mình) ---
-data/
 *.zip
-# Bản làm sạch/bổ sung của nhóm trưởng (train/Test/proceedings*): xin trực tiếp nhóm trưởng, không đưa lên git.
-leader_csv_file/
 
 # --- Credentials ---
 .env
