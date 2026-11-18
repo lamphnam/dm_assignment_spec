@@ -1,0 +1,9 @@
+04:08:40 start minilm s12 --methods ce ce5 --seeds 1 2 --no-refit
+04:13:34 done  minilm s12 exit=0
+04:13:34 start mpnet s12 --methods ce ce5 --seeds 1 2 --no-refit
+04:15:31 done  mpnet s12 exit=1
+04:15:31 start specter s12 --methods ce --seeds 1 2 --no-refit
+04:21:18 done  specter s12 exit=0
+04:21:18 start scincl s12 --methods ce --seeds 1 2 --no-refit
+04:26:50 done  scincl s12 exit=0
+04:26:50 queue finished

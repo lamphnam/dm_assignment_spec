@@ -1,0 +1,59 @@
+A5 seed 0 fold 0: 7.3s
+A5 seed 0 fold 1: 6.7s
+A5 seed 0 fold 2: 7.1s
+A5 seed 0 fold 3: 7.3s
+A5 seed 0 fold 4: 10.7s
+A5 seed 1 fold 0: 16.5s
+A5 seed 1 fold 1: 12.4s
+A5 seed 1 fold 2: 11.1s
+A5 seed 1 fold 3: 8.3s
+A5 seed 1 fold 4: 6.0s
+A5 seed 2 fold 0: 6.0s
+A5 seed 2 fold 1: 6.1s
+A5 seed 2 fold 2: 6.2s
+A5 seed 2 fold 3: 8.1s
+A5 seed 2 fold 4: 6.9s
+A5 vs cached A: max|d eg| 2.85e-07, max|d pb| 1.93e-07
+
+=== seed0 (screening) ===
+ST1 (EXP-004 ordering)                       AUC 0.8079 (base 0.8085)  honest 0.6233 d=-0.0079 (se 0.0015, 0/5) by seed {0: -0.00789}
+ST2 (EXP-004 ordering)                       AUC 0.8075 (base 0.8085)  honest 0.6265 d=-0.0047 (se 0.0023, 1/5) by seed {0: -0.0047}
+ST3 (EXP-004 ordering)                       AUC 0.8061 (base 0.8085)  honest 0.6226 d=-0.0086 (se 0.0019, 0/5) by seed {0: -0.00865}
+O1 ordering, selection E4                    AUC 0.8085 (base 0.8085)  honest 0.6309 d=-0.0003 (se 0.0003, 2/5) by seed {0: -0.00029}
+O2 ordering, selection E4                    AUC 0.8085 (base 0.8085)  honest 0.6290 d=-0.0022 (se 0.0004, 0/5) by seed {0: -0.00225}
+O1 ordering, selection ST1                   AUC 0.8079 (base 0.8085)  honest 0.6231 d=-0.0081 (se 0.0016, 0/5) by seed {0: -0.00807}
+O2 ordering, selection ST1                   AUC 0.8079 (base 0.8085)  honest 0.6215 d=-0.0097 (se 0.0013, 0/5) by seed {0: -0.00975}
+O1 ordering, selection ST2                   AUC 0.8075 (base 0.8085)  honest 0.6263 d=-0.0049 (se 0.0024, 1/5) by seed {0: -0.00486}
+O2 ordering, selection ST2                   AUC 0.8075 (base 0.8085)  honest 0.6248 d=-0.0064 (se 0.0024, 1/5) by seed {0: -0.0064}
+O1 ordering, selection ST3                   AUC 0.8061 (base 0.8085)  honest 0.6222 d=-0.0090 (se 0.0020, 0/5) by seed {0: -0.00901}
+O2 ordering, selection ST3                   AUC 0.8061 (base 0.8085)  honest 0.6206 d=-0.0106 (se 0.0020, 0/5) by seed {0: -0.01061}
+
+=== seeds12 (confirmation) ===
+ST1 (EXP-004 ordering)                       AUC 0.8109 (base 0.8109)  honest 0.6285 d=-0.0019 (se 0.0018, 3/10) by seed {1: -0.00365, 2: -0.00015}
+ST2 (EXP-004 ordering)                       AUC 0.8115 (base 0.8109)  honest 0.6252 d=-0.0053 (se 0.0012, 1/10) by seed {1: -0.00681, 2: -0.0037}
+ST3 (EXP-004 ordering)                       AUC 0.8077 (base 0.8109)  honest 0.6254 d=-0.0050 (se 0.0021, 3/10) by seed {1: -0.00648, 2: -0.00359}
+O1 ordering, selection E4                    AUC 0.8109 (base 0.8109)  honest 0.6306 d=+0.0001 (se 0.0002, 5/10) by seed {1: 0.0002, 2: 1e-05}
+O2 ordering, selection E4                    AUC 0.8109 (base 0.8109)  honest 0.6300 d=-0.0004 (se 0.0004, 2/10) by seed {1: -0.00032, 2: -0.00052}
+O1 ordering, selection ST1                   AUC 0.8109 (base 0.8109)  honest 0.6287 d=-0.0017 (se 0.0018, 3/10) by seed {1: -0.00359, 2: 0.00013}
+O2 ordering, selection ST1                   AUC 0.8109 (base 0.8109)  honest 0.6281 d=-0.0024 (se 0.0020, 3/10) by seed {1: -0.00422, 2: -0.00053}
+O1 ordering, selection ST2                   AUC 0.8115 (base 0.8109)  honest 0.6253 d=-0.0052 (se 0.0012, 1/10) by seed {1: -0.00677, 2: -0.00361}
+O2 ordering, selection ST2                   AUC 0.8115 (base 0.8109)  honest 0.6250 d=-0.0055 (se 0.0013, 1/10) by seed {1: -0.00697, 2: -0.00396}
+O1 ordering, selection ST3                   AUC 0.8077 (base 0.8109)  honest 0.6254 d=-0.0051 (se 0.0021, 3/10) by seed {1: -0.00676, 2: -0.00343}
+O2 ordering, selection ST3                   AUC 0.8077 (base 0.8109)  honest 0.6250 d=-0.0055 (se 0.0021, 2/10) by seed {1: -0.00681, 2: -0.00412}
+
+=== 15 folds ===
+ST1 (EXP-004 ordering)                       AUC 0.8099 (base 0.8101)  honest 0.6268 d=-0.0039 (se 0.0015, 3/15) by seed {0: -0.00789, 1: -0.00365, 2: -0.00015}  | run_exp 0.6278±0.0096 t=0.55 d=-0.0024
+ST2 (EXP-004 ordering)                       AUC 0.8103 (base 0.8101)  honest 0.6256 d=-0.0051 (se 0.0011, 2/15) by seed {0: -0.0047, 1: -0.00681, 2: -0.0037}  | run_exp 0.6274±0.0070 t=0.50 d=-0.0028
+ST3 (EXP-004 ordering)                       AUC 0.8072 (base 0.8101)  honest 0.6245 d=-0.0062 (se 0.0016, 3/15) by seed {0: -0.00865, 1: -0.00648, 2: -0.00359}  | run_exp 0.6272±0.0077 t=0.50 d=-0.0030
+O1 ordering, selection E4                    AUC 0.8101 (base 0.8101)  honest 0.6307 d=-0.0000 (se 0.0002, 7/15) by seed {0: -0.00029, 1: 0.0002, 2: 1e-05}  | run_exp 0.6301±0.0089 t=0.60 d=-0.0000
+O2 ordering, selection E4                    AUC 0.8101 (base 0.8101)  honest 0.6297 d=-0.0010 (se 0.0004, 2/15) by seed {0: -0.00225, 1: -0.00032, 2: -0.00052}  | run_exp 0.6292±0.0088 t=0.60 d=-0.0010
+O1 ordering, selection ST1                   AUC 0.8099 (base 0.8101)  honest 0.6269 d=-0.0038 (se 0.0015, 3/15) by seed {0: -0.00807, 1: -0.00359, 2: 0.00013}  | run_exp 0.6278±0.0095 t=0.55 d=-0.0023
+O2 ordering, selection ST1                   AUC 0.8099 (base 0.8101)  honest 0.6259 d=-0.0048 (se 0.0016, 3/15) by seed {0: -0.00975, 1: -0.00422, 2: -0.00053}  | run_exp 0.6268±0.0093 t=0.55 d=-0.0033
+O1 ordering, selection ST2                   AUC 0.8103 (base 0.8101)  honest 0.6256 d=-0.0051 (se 0.0011, 2/15) by seed {0: -0.00486, 1: -0.00677, 2: -0.00361}  | run_exp 0.6274±0.0070 t=0.50 d=-0.0028
+O2 ordering, selection ST2                   AUC 0.8103 (base 0.8101)  honest 0.6249 d=-0.0058 (se 0.0011, 2/15) by seed {0: -0.0064, 1: -0.00697, 2: -0.00396}  | run_exp 0.6267±0.0070 t=0.50 d=-0.0035
+O1 ordering, selection ST3                   AUC 0.8072 (base 0.8101)  honest 0.6243 d=-0.0064 (se 0.0016, 3/15) by seed {0: -0.00901, 1: -0.00676, 2: -0.00343}  | run_exp 0.6270±0.0076 t=0.50 d=-0.0032
+O2 ordering, selection ST3                   AUC 0.8072 (base 0.8101)  honest 0.6235 d=-0.0072 (se 0.0017, 2/15) by seed {0: -0.01061, 1: -0.00681, 2: -0.00412}  | run_exp 0.6261±0.0073 t=0.50 d=-0.0041
+
+calibration (mean pb vs positive rate): {"E4": 0.648, "ST1": 0.614, "ST2": 0.6138, "ST3": 0.6138} rate 0.6143
+mean stacker coefficients: {"ST1": {"b": -0.064, "A": 0.251, "minilm": 0.207, "mpnet": 0.09, "specter": 0.066, "scincl": 0.128}, "ST2": {"b": -0.076, "A": 0.229, "minilm": 0.173, "mpnet": 0.038, "specter": 0.061, "scincl": 0.122, "ce5_minilm": 0.027, "ce5_mpnet": 0.106}, "ST3": {"b": 0.002, "A": 0.24, "minilm": 0.203, "mpnet": 0.091, "specter": 0.062, "scincl": 0.131, "cav": -0.069, "kr": 0.002, "lics": -0.126, "lpnmr": 0.199}}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\stack_cv.json

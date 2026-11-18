@@ -1,0 +1,15 @@
+20:18:39 start minilm ce_auth --methods ce --no-refit --text authors
+20:19:56 done  minilm ce_auth exit=0
+20:19:56 start mpnet ce_auth --methods ce --no-refit --text authors
+20:20:17 done  mpnet ce_auth exit=1
+20:20:17 start mpnet ce_lr5 --methods ce --no-refit --lr 5e-5
+20:23:25 done  mpnet ce_lr5 exit=0
+20:23:25 start minilm ce_abs --methods ce --no-refit --text abstract --max-len 256
+20:26:27 done  minilm ce_abs exit=0
+20:26:27 start mpnet ce_abs --methods ce --no-refit --text abstract --max-len 256
+20:27:09 done  mpnet ce_abs exit=1
+20:27:09 start e5_large ce_top8 --methods ce --no-refit --freeze-below 16
+20:27:48 done  e5_large ce_top8 exit=1
+20:27:48 start bge_large ce_top8 --methods ce --no-refit --freeze-below 16
+20:28:24 done  bge_large ce_top8 exit=1
+20:28:24 queue finished

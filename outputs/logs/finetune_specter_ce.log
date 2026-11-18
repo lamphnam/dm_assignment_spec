@@ -1,0 +1,21 @@
+finetune_specter_ce: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'specter', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': False, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce'}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 43/199 [00:00<00:00, 421.62it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1023.83it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  16%|█▌        | 31/199 [00:00<00:00, 300.66it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1116.92it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 30.2, "ce_steps": 252, "t_total": 43.8, "auc": {"A": 0.7904, "F0": 0.7443, "CE": 0.793, "A[CE]": 0.7802, "A+F0": 0.7943, "A+CE": 0.8074}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 23/199 [00:00<00:00, 222.35it/s]Loading weights:  29%|██▊       | 57/199 [00:00<00:00, 286.03it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 942.01it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 30.0, "ce_steps": 252, "t_total": 43.3, "auc": {"A": 0.8096, "F0": 0.7597, "CE": 0.7895, "A[CE]": 0.7855, "A+F0": 0.8083, "A+CE": 0.81}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  20%|██        | 40/199 [00:00<00:00, 390.02it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1168.78it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 30.4, "ce_steps": 252, "t_total": 42.8, "auc": {"A": 0.7916, "F0": 0.7447, "CE": 0.7983, "A[CE]": 0.7977, "A+F0": 0.7952, "A+CE": 0.8091}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 43/199 [00:00<00:00, 414.01it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1072.28it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 29.7, "ce_steps": 252, "t_total": 42.3, "auc": {"A": 0.7795, "F0": 0.7333, "CE": 0.7791, "A[CE]": 0.7738, "A+F0": 0.7817, "A+CE": 0.7919}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▎        | 27/199 [00:00<00:00, 269.55it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1204.53it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 30.8, "ce_steps": 252, "t_total": 43.4, "auc": {"A": 0.7726, "F0": 0.7182, "CE": 0.7794, "A[CE]": 0.7739, "A+F0": 0.7698, "A+CE": 0.7894}}
+
+finetune_specter_ce  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7398  honest=0.6026+-0.0098 d=-0.0131 Q=0.4618 R=0.8683 fixed0.55=0.5978  venueAUC={'cav': 0.7294, 'kr': 0.6955, 'lics': 0.6839, 'lpnmr': 0.7699}
+CE        AUC=0.7857  honest=0.6155+-0.0063 d=-0.0002 Q=0.5065 R=0.7888 fixed0.55=0.6150  venueAUC={'cav': 0.7565, 'kr': 0.7562, 'lics': 0.7545, 'lpnmr': 0.8952}
+A[CE]     AUC=0.7811  honest=0.6149+-0.0086 d=-0.0009 Q=0.5024 R=0.7924 fixed0.55=0.6157  venueAUC={'cav': 0.7606, 'kr': 0.7479, 'lics': 0.7504, 'lpnmr': 0.8852}
+A+F0      AUC=0.7892  honest=0.6155+-0.0144 d=-0.0002 Q=0.5102 R=0.7764 fixed0.55=0.6175  venueAUC={'cav': 0.7762, 'kr': 0.765, 'lics': 0.7318, 'lpnmr': 0.8967}
+A+CE      AUC=0.8005  honest=0.6186+-0.0079 d=+0.0029 Q=0.4916 R=0.8365 fixed0.55=0.6202  venueAUC={'cav': 0.7773, 'kr': 0.7744, 'lics': 0.7607, 'lpnmr': 0.9088}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_specter_ce.json

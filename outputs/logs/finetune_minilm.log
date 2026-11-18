@@ -1,0 +1,33 @@
+finetune_minilm: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'minilm', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['setfit', 'ce'], 'no_prefix': False, 'no_refit': False, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'tag': ''}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3724.19it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3522.87it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 4811.70it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_sf": 67.7, "sf_steps": 1247, "t_ce": 11.5, "ce_steps": 252, "t_total": 95.2, "auc": {"A": 0.7904, "F0": 0.7474, "SF": 0.7319, "A[SF]": 0.7357, "CE": 0.7961, "A[CE]": 0.7966, "A+F0": 0.7867, "A+SF": 0.7828, "A+CE": 0.8063, "A+SF+CE": 0.8016}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3534.98it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3291.58it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 5.7, "t_sf": 67.2, "sf_steps": 1247, "t_ce": 11.6, "ce_steps": 252, "t_total": 100.1, "auc": {"A": 0.8096, "F0": 0.7377, "SF": 0.7658, "A[SF]": 0.7653, "CE": 0.7921, "A[CE]": 0.7995, "A+F0": 0.7973, "A+SF": 0.8041, "A+CE": 0.8153, "A+SF+CE": 0.8137}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3371.55it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3342.95it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 6.1, "t_sf": 69.7, "sf_steps": 1247, "t_ce": 11.1, "ce_steps": 252, "t_total": 101.7, "auc": {"A": 0.7916, "F0": 0.7291, "SF": 0.762, "A[SF]": 0.7883, "CE": 0.7991, "A[CE]": 0.8026, "A+F0": 0.7771, "A+SF": 0.8068, "A+CE": 0.8072, "A+SF+CE": 0.8139}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3490.17it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3629.97it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 5.9, "t_sf": 67.9, "sf_steps": 1247, "t_ce": 11.5, "ce_steps": 252, "t_total": 100.5, "auc": {"A": 0.7795, "F0": 0.7255, "SF": 0.7634, "A[SF]": 0.7647, "CE": 0.7754, "A[CE]": 0.7743, "A+F0": 0.7702, "A+SF": 0.7983, "A+CE": 0.7857, "A+SF+CE": 0.7953}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3418.94it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3965.43it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 5.9, "t_sf": 68.8, "sf_steps": 1248, "t_ce": 11.2, "ce_steps": 252, "t_total": 101.5, "auc": {"A": 0.7726, "F0": 0.7249, "SF": 0.7463, "A[SF]": 0.7379, "CE": 0.7776, "A[CE]": 0.7862, "A+F0": 0.7666, "A+SF": 0.7866, "A+CE": 0.7887, "A+SF+CE": 0.7941}}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "d:\BachKhoa\hk261\DM\assignment\research\finetune_cv.py", line 295, in <module>
+    main()
+    ~~~~^^
+  File "d:\BachKhoa\hk261\DM\assignment\research\finetune_cv.py", line 289, in main
+    print(f"{v:9s} AUC={r['auc']:.4f}  {hs}  venueAUC={r['venue_auc']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0394' in position 43: character maps to <undefined>
+
+finetune_minilm  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])

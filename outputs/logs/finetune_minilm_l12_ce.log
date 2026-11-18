@@ -1,0 +1,27 @@
+finetune_minilm_l12_ce: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'minilm_l12', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce', 'text': 'title', 'freeze_below': 0, 'max_len': 0}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\ADMIN\.cache\huggingface\hub\models--sentence-transformers--all-MiniLM-L12-v2. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\ADMIN\.cache\huggingface\hub. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3140.67it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3248.01it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 16.2, "ce_steps": 252, "t_total": 18.3, "auc": {"A": 0.7904, "F0": 0.7269, "CE": 0.7953, "A+F0": 0.7805, "A+CE": 0.8025}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3096.38it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 16.3, "ce_steps": 252, "t_total": 18.3, "auc": {"A": 0.8096, "F0": 0.733, "CE": 0.7851, "A+F0": 0.7951, "A+CE": 0.8097}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3118.53it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 16.0, "ce_steps": 252, "t_total": 17.9, "auc": {"A": 0.7916, "F0": 0.7166, "CE": 0.7966, "A+F0": 0.7768, "A+CE": 0.8077}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3021.84it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 16.2, "ce_steps": 252, "t_total": 18.2, "auc": {"A": 0.7795, "F0": 0.7224, "CE": 0.7924, "A+F0": 0.7699, "A+CE": 0.7981}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2040.15it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 16.2, "ce_steps": 252, "t_total": 18.5, "auc": {"A": 0.7726, "F0": 0.7305, "CE": 0.7918, "A+F0": 0.769, "A+CE": 0.7971}}
+
+finetune_minilm_l12_ce  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7245  honest=0.5950+-0.0027 d=-0.0207 Q=0.4597 R=0.8436 fixed0.55=0.5912  venueAUC={'cav': 0.7077, 'kr': 0.7112, 'lics': 0.6352, 'lpnmr': 0.8431}
+CE        AUC=0.7907  honest=0.6162+-0.0063 d=+0.0005 Q=0.4967 R=0.8143 fixed0.55=0.6178  venueAUC={'cav': 0.7643, 'kr': 0.7761, 'lics': 0.7483, 'lpnmr': 0.9208}
+A+F0      AUC=0.7770  honest=0.6049+-0.0046 d=-0.0108 Q=0.4967 R=0.7817 fixed0.55=0.6073  venueAUC={'cav': 0.7614, 'kr': 0.7639, 'lics': 0.7027, 'lpnmr': 0.9038}
+A+CE      AUC=0.8016  honest=0.6201+-0.0102 d=+0.0044 Q=0.5271 R=0.7567 fixed0.55=0.6230  venueAUC={'cav': 0.7808, 'kr': 0.7844, 'lics': 0.7514, 'lpnmr': 0.9313}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_minilm_l12_ce.json

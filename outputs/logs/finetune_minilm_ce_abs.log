@@ -1,0 +1,21 @@
+finetune_minilm_ce_abs: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'minilm', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce_abs', 'text': 'abstract', 'freeze_below': 0, 'max_len': 256}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2706.26it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3517.28it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 30.0, "ce_steps": 252, "t_total": 32.5, "auc": {"A": 0.7904, "F0": 0.7197, "CE": 0.7589, "A+F0": 0.7854, "A+CE": 0.7937}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3443.76it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 29.8, "ce_steps": 252, "t_total": 33.3, "auc": {"A": 0.8096, "F0": 0.6746, "CE": 0.7478, "A+F0": 0.7837, "A+CE": 0.8037}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3412.48it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 29.6, "ce_steps": 252, "t_total": 32.1, "auc": {"A": 0.7916, "F0": 0.6875, "CE": 0.7623, "A+F0": 0.7731, "A+CE": 0.7976}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3382.98it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 29.6, "ce_steps": 252, "t_total": 32.1, "auc": {"A": 0.7795, "F0": 0.6901, "CE": 0.7378, "A+F0": 0.7644, "A+CE": 0.7763}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3586.93it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 29.8, "ce_steps": 252, "t_total": 33.1, "auc": {"A": 0.7726, "F0": 0.6747, "CE": 0.732, "A+F0": 0.7579, "A+CE": 0.77}}
+
+finetune_minilm_ce_abs  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.6894  honest=0.5827+-0.0072 d=-0.0330 Q=0.4340 R=0.8930 fixed0.55=0.5812  venueAUC={'cav': 0.6594, 'kr': 0.6617, 'lics': 0.597, 'lpnmr': 0.7599}
+CE        AUC=0.7451  honest=0.5997+-0.0051 d=-0.0160 Q=0.4825 R=0.8023 fixed0.55=0.6016  venueAUC={'cav': 0.7118, 'kr': 0.7329, 'lics': 0.667, 'lpnmr': 0.8561}
+A+F0      AUC=0.7718  honest=0.6048+-0.0079 d=-0.0109 Q=0.4961 R=0.7799 fixed0.55=0.6100  venueAUC={'cav': 0.7529, 'kr': 0.7507, 'lics': 0.6988, 'lpnmr': 0.9013}
+A+CE      AUC=0.7861  honest=0.6145+-0.0115 d=-0.0012 Q=0.5188 R=0.7574 fixed0.55=0.6139  venueAUC={'cav': 0.7661, 'kr': 0.7686, 'lics': 0.7196, 'lpnmr': 0.9178}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_minilm_ce_abs.json

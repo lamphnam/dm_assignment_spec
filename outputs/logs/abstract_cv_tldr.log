@@ -1,0 +1,17 @@
+text mode = tldr, embedding models = ['minilm']
+text source: {'tldr': 1812, 'title_only': 682}
+worth-rate by text source: {'title_only': 0.582, 'tldr': 0.659}
+  [abs minilm] 64/2494  2s
+  [abs minilm] 576/2494  7s
+  [abs minilm] 1088/2494  13s
+  [abs minilm] 1600/2494  18s
+  [abs minilm] 2112/2494  24s
+A done 30s
+B done 32s
+C done 14s
+
+seed-0 folds, non-iclp scored
+A exp003 (title only)                         honest=0.6157±0.0078 Q=0.5112 R=0.7749 fixed0.55=0.6157 AUC=0.7877
+B exp003 + abstract[minilm]                   honest=0.6105±0.0092 Q=0.5267 R=0.7285 fixed0.55=0.6100 AUC=0.7830
+C abstract[minilm] replaces title emb         honest=0.5996±0.0091 Q=0.4834 R=0.7933 fixed0.55=0.6004 AUC=0.7539
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\abstract_cv_tldr_minilm.json

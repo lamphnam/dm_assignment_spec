@@ -1,0 +1,41 @@
+finetune_mpnet_bag1: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'mpnet', 'seeds': [0, 1, 2], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 1, 'tag': 'bag1'}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  20%|█▉        | 39/199 [00:00<00:00, 382.24it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1211.29it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 33/199 [00:00<00:00, 312.42it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1205.59it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 31.1, "ce_steps": 252, "t_total": 34.1, "auc": {"A": 0.7904, "F0": 0.7362, "CE": 0.799, "A+F0": 0.7836, "A+CE": 0.8067}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  21%|██        | 41/199 [00:00<00:00, 401.83it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1100.71it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 30.5, "ce_steps": 252, "t_total": 33.7, "auc": {"A": 0.8096, "F0": 0.741, "CE": 0.8074, "A+F0": 0.797, "A+CE": 0.8205}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 28/199 [00:00<00:00, 274.03it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1101.01it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 31.7, "ce_steps": 252, "t_total": 34.5, "auc": {"A": 0.7916, "F0": 0.746, "CE": 0.7892, "A+F0": 0.7847, "A+CE": 0.8023}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  16%|█▌        | 32/199 [00:00<00:00, 284.21it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1127.38it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 31.1, "ce_steps": 252, "t_total": 34.1, "auc": {"A": 0.7795, "F0": 0.7288, "CE": 0.7849, "A+F0": 0.7744, "A+CE": 0.7964}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 28/199 [00:00<00:00, 263.28it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1103.13it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 31.1, "ce_steps": 252, "t_total": 34.2, "auc": {"A": 0.7726, "F0": 0.7274, "CE": 0.7643, "A+F0": 0.7665, "A+CE": 0.7783}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 28/199 [00:00<00:00, 279.36it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1128.37it/s]
+[seed 1 fold 0] {"seed": 1, "fold": 0, "t_A": 0.0, "t_ce": 30.4, "ce_steps": 252, "t_total": 33.5, "auc": {"A": 0.7823, "F0": 0.7351, "CE": 0.7882, "A+F0": 0.7733, "A+CE": 0.7986}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  19%|█▊        | 37/199 [00:00<00:00, 361.27it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1100.24it/s]
+[seed 1 fold 1] {"seed": 1, "fold": 1, "t_A": 0.0, "t_ce": 31.3, "ce_steps": 252, "t_total": 34.3, "auc": {"A": 0.7673, "F0": 0.7384, "CE": 0.7719, "A+F0": 0.7699, "A+CE": 0.7828}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 43/199 [00:00<00:00, 406.87it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1141.77it/s]
+[seed 1 fold 2] {"seed": 1, "fold": 2, "t_A": 0.0, "t_ce": 31.2, "ce_steps": 252, "t_total": 34.1, "auc": {"A": 0.7994, "F0": 0.7397, "CE": 0.7901, "A+F0": 0.7902, "A+CE": 0.8053}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  19%|█▊        | 37/199 [00:00<00:00, 368.46it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1049.01it/s]
+[seed 1 fold 3] {"seed": 1, "fold": 3, "t_A": 0.0, "t_ce": 31.7, "ce_steps": 252, "t_total": 34.6, "auc": {"A": 0.8137, "F0": 0.7734, "CE": 0.8119, "A+F0": 0.8102, "A+CE": 0.8242}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 44/199 [00:00<00:00, 415.23it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1065.98it/s]
+[seed 1 fold 4] {"seed": 1, "fold": 4, "t_A": 0.0, "t_ce": 31.0, "ce_steps": 252, "t_total": 34.0, "auc": {"A": 0.7983, "F0": 0.7317, "CE": 0.8183, "A+F0": 0.7851, "A+CE": 0.8247}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  20%|██        | 40/199 [00:00<00:00, 379.67it/s]Loading weights:  39%|███▉      | 78/199 [00:00<00:00, 352.00it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 891.22it/s]
+[seed 2 fold 0] {"seed": 2, "fold": 0, "t_A": 0.0, "t_ce": 31.8, "ce_steps": 252, "t_total": 34.8, "auc": {"A": 0.7949, "F0": 0.7608, "CE": 0.7958, "A+F0": 0.794, "A+CE": 0.8046}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 24/199 [00:00<00:00, 231.85it/s]Loading weights:  27%|██▋       | 54/199 [00:00<00:00, 248.14it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 738.12it/s]
+[seed 2 fold 1] {"seed": 2, "fold": 1, "t_A": 0.0, "t_ce": 31.5, "ce_steps": 252, "t_total": 34.7, "auc": {"A": 0.7621, "F0": 0.6961, "CE": 0.7714, "A+F0": 0.7494, "A+CE": 0.7785}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 24/199 [00:00<00:00, 235.79it/s]Loading weights:  29%|██▊       | 57/199 [00:00<00:00, 287.98it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 853.30it/s]
+[seed 2 fold 2] {"seed": 2, "fold": 2, "t_A": 0.0, "t_ce": 31.5, "ce_steps": 252, "t_total": 34.8, "auc": {"A": 0.7842, "F0": 0.7336, "CE": 0.7764, "A+F0": 0.7768, "A+CE": 0.7903}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  25%|██▍       | 49/199 [00:00<00:00, 489.53it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1106.24it/s]
+[seed 2 fold 3] {"seed": 2, "fold": 3, "t_A": 0.0, "t_ce": 30.9, "ce_steps": 252, "t_total": 34.1, "auc": {"A": 0.7994, "F0": 0.7257, "CE": 0.805, "A+F0": 0.7822, "A+CE": 0.815}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 44/199 [00:00<00:00, 430.83it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1076.35it/s]
+[seed 2 fold 4] {"seed": 2, "fold": 4, "t_A": 0.0, "t_ce": 31.7, "ce_steps": 252, "t_total": 34.6, "auc": {"A": 0.812, "F0": 0.7601, "CE": 0.8106, "A+F0": 0.8029, "A+CE": 0.8217}}
+
+finetune_mpnet_bag1  seeds=[0, 1, 2] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7901  honest=0.6172+-0.0095 d=+0.0000 Q=0.5109 R=0.7809 fixed0.55=0.6178  venueAUC={'cav': 0.7798, 'kr': 0.7735, 'lics': 0.7242, 'lpnmr': 0.8904}
+F0        AUC=0.7384  honest=0.5930+-0.0122 d=-0.0241 Q=0.4733 R=0.7990 fixed0.55=0.5950  venueAUC={'cav': 0.7188, 'kr': 0.7501, 'lics': 0.6403, 'lpnmr': 0.8251}
+CE        AUC=0.7918  honest=0.6199+-0.0098 d=+0.0028 Q=0.5067 R=0.8023 fixed0.55=0.6218  venueAUC={'cav': 0.7753, 'kr': 0.7879, 'lics': 0.7297, 'lpnmr': 0.8795}
+A+F0      AUC=0.7828  honest=0.6114+-0.0099 d=-0.0057 Q=0.5032 R=0.7824 fixed0.55=0.6130  venueAUC={'cav': 0.7701, 'kr': 0.7771, 'lics': 0.7073, 'lpnmr': 0.8879}
+A+CE      AUC=0.8032  honest=0.6251+-0.0113 d=+0.0079 Q=0.5107 R=0.8071 fixed0.55=0.6256  venueAUC={'cav': 0.7913, 'kr': 0.7918, 'lics': 0.7413, 'lpnmr': 0.9033}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_mpnet_bag1.json

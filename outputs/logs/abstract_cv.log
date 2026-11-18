@@ -1,0 +1,16 @@
+text source: {'abstract': 1502, 'title_only': 522, 'tldr': 470}
+worth-rate by text source: {'abstract': 0.628, 'title_only': 0.584, 'tldr': 0.73}
+  [abs minilm] 64/2494  4s
+  [abs minilm] 576/2494  21s
+  [abs minilm] 1088/2494  39s
+  [abs minilm] 1600/2494  57s
+  [abs minilm] 2112/2494  75s
+A done 38s
+B done 39s
+C done 18s
+
+seed-0 folds, non-iclp scored
+A exp003 (title only)                         honest=0.6157±0.0078 Q=0.5112 R=0.7749 fixed0.55=0.6157 AUC=0.7877
+B exp003 + abstract[minilm]                   honest=0.6117±0.0113 Q=0.5051 R=0.7782 fixed0.55=0.6134 AUC=0.7814
+C abstract[minilm] replaces title emb         honest=0.5920±0.0131 Q=0.4742 R=0.7944 fixed0.55=0.5961 AUC=0.7460
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\abstract_cv_minilm.json

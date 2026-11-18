@@ -1,0 +1,15 @@
+03:41:58 start minilm sf1
+03:43:34 done  minilm sf1 exit=0
+03:43:34 start minilm sf2
+03:45:42 done  minilm sf2 exit=0
+03:45:42 start minilm ce_e2
+03:47:06 done  minilm ce_e2 exit=0
+03:47:06 start minilm ce_e8
+03:49:44 done  minilm ce_e8 exit=0
+03:49:44 start minilm ce_noprefix
+03:51:30 done  minilm ce_noprefix exit=0
+03:51:30 start mpnet ce
+03:51:53 done  mpnet ce exit=0
+03:51:53 start specter ce
+03:53:01 done  specter ce exit=0
+03:53:01 queue finished

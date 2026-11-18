@@ -1,0 +1,9 @@
+04:38:50 start minilm bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit
+04:42:01 done  minilm bag1 exit=0
+04:42:01 start mpnet bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit
+04:51:00 done  mpnet bag1 exit=0
+04:51:00 start specter bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit
+04:59:46 done  specter bag1 exit=0
+04:59:46 start scincl bag1 --methods ce --seeds 0 1 2 --seed-offset 1 --no-refit
+05:08:30 done  scincl bag1 exit=0
+05:08:30 queue finished

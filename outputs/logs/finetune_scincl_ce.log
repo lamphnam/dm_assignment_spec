@@ -1,0 +1,20 @@
+finetune_scincl_ce: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'scincl', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce'}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  10%|█         | 20/199 [00:00<00:01, 176.83it/s]Loading weights:  21%|██        | 42/199 [00:00<00:00, 181.23it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 689.20it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▎        | 27/199 [00:00<00:00, 256.90it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 971.00it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 28.5, "ce_steps": 252, "t_total": 31.2, "auc": {"A": 0.7904, "F0": 0.7337, "CE": 0.7865, "A+F0": 0.7925, "A+CE": 0.8038}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 36/199 [00:00<00:00, 356.26it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 996.25it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 28.0, "ce_steps": 252, "t_total": 30.6, "auc": {"A": 0.8096, "F0": 0.7726, "CE": 0.8017, "A+F0": 0.8174, "A+CE": 0.8173}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 38/199 [00:00<00:00, 365.15it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1199.46it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 28.9, "ce_steps": 252, "t_total": 31.2, "auc": {"A": 0.7916, "F0": 0.7561, "CE": 0.8021, "A+F0": 0.7989, "A+CE": 0.8095}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  19%|█▊        | 37/199 [00:00<00:00, 358.25it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1109.34it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 28.5, "ce_steps": 252, "t_total": 30.9, "auc": {"A": 0.7795, "F0": 0.7339, "CE": 0.7717, "A+F0": 0.7834, "A+CE": 0.7868}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 26/199 [00:00<00:00, 232.87it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1123.28it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 28.8, "ce_steps": 252, "t_total": 31.3, "auc": {"A": 0.7726, "F0": 0.725, "CE": 0.7714, "A+F0": 0.7695, "A+CE": 0.7897}}
+
+finetune_scincl_ce  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7443  honest=0.6041+-0.0155 d=-0.0116 Q=0.4670 R=0.8554 fixed0.55=0.6004  venueAUC={'cav': 0.727, 'kr': 0.7353, 'lics': 0.671, 'lpnmr': 0.8195}
+CE        AUC=0.7856  honest=0.6144+-0.0104 d=-0.0013 Q=0.4912 R=0.8230 fixed0.55=0.6155  venueAUC={'cav': 0.7495, 'kr': 0.7773, 'lics': 0.751, 'lpnmr': 0.8852}
+A+F0      AUC=0.7913  honest=0.6101+-0.0125 d=-0.0056 Q=0.5021 R=0.7824 fixed0.55=0.6144  venueAUC={'cav': 0.7782, 'kr': 0.7781, 'lics': 0.7247, 'lpnmr': 0.9148}
+A+CE      AUC=0.8005  honest=0.6241+-0.0129 d=+0.0084 Q=0.5094 R=0.8076 fixed0.55=0.6227  venueAUC={'cav': 0.7752, 'kr': 0.7842, 'lics': 0.7583, 'lpnmr': 0.9153}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_scincl_ce.json

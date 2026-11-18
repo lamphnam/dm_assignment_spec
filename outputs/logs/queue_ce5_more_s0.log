@@ -1,0 +1,9 @@
+21:14:08 start specter ce5 --methods ce5 --no-refit
+21:17:37 done  specter ce5 exit=0
+21:17:37 start scincl ce5 --methods ce5 --no-refit
+21:20:38 done  scincl ce5 exit=0
+21:20:38 start specter2 ce5 --methods ce5 --no-refit
+21:23:38 done  specter2 ce5 exit=0
+21:23:38 start e5_base ce5 --methods ce5 --no-refit
+21:26:48 done  e5_base ce5 exit=0
+21:26:48 queue finished

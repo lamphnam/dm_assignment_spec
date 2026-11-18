@@ -1,0 +1,24 @@
+A_cite seed 0 fold 0: 5.6s
+A_cite seed 0 fold 1: 6.2s
+A_cite seed 0 fold 2: 5.5s
+A_cite seed 0 fold 3: 6.1s
+A_cite seed 0 fold 4: 6.1s
+A_cite seed 1 fold 0: 5.9s
+A_cite seed 1 fold 1: 5.6s
+A_cite seed 1 fold 2: 6.1s
+A_cite seed 1 fold 3: 5.7s
+A_cite seed 1 fold 4: 6.2s
+A_cite seed 2 fold 0: 6.0s
+A_cite seed 2 fold 1: 5.7s
+A_cite seed 2 fold 2: 5.8s
+A_cite seed 2 fold 3: 6.0s
+A_cite seed 2 fold 4: 5.7s
+=== seed0 ===
+A' (exp003 + S2 metadata) vs A               AUC 0.7870 (base 0.7877)  honest 0.6115 d=-0.0042 (se 0.0023, 1/5) by seed {0: -0.00423}
+EXP-004 with A' in place of A                AUC 0.8087 (base 0.8085)  honest 0.6316 d=+0.0004 (se 0.0003, 3/5) by seed {0: 0.00037}
+=== seeds12 ===
+A' (exp003 + S2 metadata) vs A               AUC 0.7911 (base 0.7913)  honest 0.6152 d=-0.0027 (se 0.0018, 3/10) by seed {1: -0.00355, 2: -0.00193}
+EXP-004 with A' in place of A                AUC 0.8111 (base 0.8109)  honest 0.6319 d=+0.0015 (se 0.0012, 6/10) by seed {1: 0.00054, 2: 0.00239}
+=== 15 folds ===
+A' (exp003 + S2 metadata) vs A               AUC 0.7898 (base 0.7901)  honest 0.6139 d=-0.0032 (se 0.0014, 4/15) by seed {0: -0.00423, 1: -0.00355, 2: -0.00193}  | run_exp 0.6166±0.0119 t=0.50 d=-0.0013
+EXP-004 with A' in place of A                AUC 0.8103 (base 0.8101)  honest 0.6318 d=+0.0011 (se 0.0008, 9/15) by seed {0: 0.00037, 1: 0.00054, 2: 0.00239}  | run_exp 0.6299±0.0087 t=0.60 d=-0.0003

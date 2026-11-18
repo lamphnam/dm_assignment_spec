@@ -46,27 +46,3 @@ checkpoints/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# --- Kết quả chạy: log và kết quả trung gian ---
-outputs/logs/
-*.log
-*.err
-# OOF trung gian (~100 file, ~40 MB) của các sweep: không track, tự sinh lại bằng research/finetune_cv.py
-# (cần GPU, ~1.5 giờ với RTX 3050 4 GB), hoặc xin file zip từ chủ repo.
-outputs/research/*.pkl
-outputs/**/*.npz
-
-# --- Ngoại lệ: những gì cần để chạy lại và so sánh với EXP-004 mà không cần GPU ---
-# 10 file OOF của thành phần ft_ens_v1 (11.5 MB); scripts/finalize_from_oof.py và research/ens_compare.py đọc các file này.
-!outputs/research/finetune_minilm_oof.pkl
-!outputs/research/finetune_minilm_s12_oof.pkl
-!outputs/research/finetune_minilm_ce5_oof.pkl
-!outputs/research/finetune_mpnet_ce_oof.pkl
-!outputs/research/finetune_mpnet_s12_oof.pkl
-!outputs/research/finetune_mpnet_ce5_oof.pkl
-!outputs/research/finetune_specter_ce_oof.pkl
-!outputs/research/finetune_specter_s12_oof.pkl
-!outputs/research/finetune_scincl_ce_oof.pkl
-!outputs/research/finetune_scincl_s12_oof.pkl
-# Dự đoán test của EXP-004 (15 KB), để đối chiếu khi tái lập.
-!outputs/exp004_ft_ens_v1/test_predictions.npz

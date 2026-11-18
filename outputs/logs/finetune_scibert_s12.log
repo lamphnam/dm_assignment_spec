@@ -1,0 +1,196 @@
+finetune_scibert_s12: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'scibert', 'seeds': [1, 2], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 's12', 'text': 'title', 'freeze_below': 0, 'max_len': 0}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 20226.00it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 27637.96it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 1 fold 0] {"seed": 1, "fold": 0, "t_A": 0.0, "t_ce": 28.7, "ce_steps": 252, "t_total": 31.8, "auc": {"A": 0.7823, "F0": 0.7659, "CE": 0.8009, "A+F0": 0.7901, "A+CE": 0.8046}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 20000.63it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 1 fold 1] {"seed": 1, "fold": 1, "t_A": 0.0, "t_ce": 29.3, "ce_steps": 252, "t_total": 32.6, "auc": {"A": 0.7673, "F0": 0.7844, "CE": 0.7777, "A+F0": 0.7961, "A+CE": 0.7886}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 19802.76it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 1 fold 2] {"seed": 1, "fold": 2, "t_A": 0.0, "t_ce": 29.2, "ce_steps": 252, "t_total": 32.1, "auc": {"A": 0.7994, "F0": 0.7911, "CE": 0.787, "A+F0": 0.8116, "A+CE": 0.805}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22762.80it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 1 fold 3] {"seed": 1, "fold": 3, "t_A": 0.0, "t_ce": 29.5, "ce_steps": 252, "t_total": 32.4, "auc": {"A": 0.8137, "F0": 0.8102, "CE": 0.809, "A+F0": 0.8328, "A+CE": 0.8278}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 14982.35it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 1 fold 4] {"seed": 1, "fold": 4, "t_A": 0.0, "t_ce": 29.1, "ce_steps": 252, "t_total": 32.6, "auc": {"A": 0.7983, "F0": 0.7928, "CE": 0.8124, "A+F0": 0.8168, "A+CE": 0.8225}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 20584.65it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 2 fold 0] {"seed": 2, "fold": 0, "t_A": 0.0, "t_ce": 29.0, "ce_steps": 252, "t_total": 32.1, "auc": {"A": 0.7949, "F0": 0.7904, "CE": 0.7993, "A+F0": 0.8076, "A+CE": 0.8097}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 16356.07it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 2 fold 1] {"seed": 2, "fold": 1, "t_A": 0.0, "t_ce": 29.2, "ce_steps": 252, "t_total": 32.3, "auc": {"A": 0.7621, "F0": 0.785, "CE": 0.8008, "A+F0": 0.7912, "A+CE": 0.8002}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 19303.56it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 2 fold 2] {"seed": 2, "fold": 2, "t_A": 0.0, "t_ce": 29.3, "ce_steps": 252, "t_total": 33.6, "auc": {"A": 0.7842, "F0": 0.7772, "CE": 0.7907, "A+F0": 0.7982, "A+CE": 0.8}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 23339.48it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 2 fold 3] {"seed": 2, "fold": 3, "t_A": 0.0, "t_ce": 29.0, "ce_steps": 252, "t_total": 33.7, "auc": {"A": 0.7994, "F0": 0.7837, "CE": 0.8248, "A+F0": 0.8114, "A+CE": 0.8331}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 14790.92it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: allenai/scibert_scivocab_uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[seed 2 fold 4] {"seed": 2, "fold": 4, "t_A": 0.0, "t_ce": 29.2, "ce_steps": 252, "t_total": 32.2, "auc": {"A": 0.812, "F0": 0.8002, "CE": 0.7995, "A+F0": 0.8268, "A+CE": 0.8169}}
+
+finetune_scibert_s12  seeds=[1, 2] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7913  honest=0.6179+-0.0103 d=+0.0000 Q=0.5107 R=0.7839 fixed0.55=0.6189  venueAUC={'cav': 0.7829, 'kr': 0.7738, 'lics': 0.7257, 'lpnmr': 0.8892}
+F0        AUC=0.7873  honest=0.6165+-0.0123 d=-0.0014 Q=0.4885 R=0.8370 fixed0.55=0.6157  venueAUC={'cav': 0.7655, 'kr': 0.7816, 'lics': 0.7264, 'lpnmr': 0.8292}
+CE        AUC=0.7987  honest=0.6206+-0.0110 d=+0.0027 Q=0.4947 R=0.8346 fixed0.55=0.6192  venueAUC={'cav': 0.7741, 'kr': 0.7943, 'lics': 0.7513, 'lpnmr': 0.9102}
+A+F0      AUC=0.8083  honest=0.6254+-0.0099 d=+0.0075 Q=0.5168 R=0.7942 fixed0.55=0.6262  venueAUC={'cav': 0.8023, 'kr': 0.7909, 'lics': 0.7483, 'lpnmr': 0.9054}
+A+CE      AUC=0.8103  honest=0.6233+-0.0100 d=+0.0054 Q=0.5136 R=0.7952 fixed0.55=0.6256  venueAUC={'cav': 0.7957, 'kr': 0.7969, 'lics': 0.7591, 'lpnmr': 0.9217}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_scibert_s12.json

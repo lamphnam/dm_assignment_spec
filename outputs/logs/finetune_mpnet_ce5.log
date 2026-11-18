@@ -1,0 +1,24 @@
+finetune_mpnet_ce5: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'mpnet', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce5'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce5'}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  20%|█▉        | 39/199 [00:00<00:00, 365.61it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1350.62it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  21%|██        | 42/199 [00:00<00:00, 403.10it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1235.57it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce5": 30.6, "ce5_steps": 252, "t_total": 33.6, "auc": {"A": 0.7904, "F0": 0.7362, "CE5": 0.8197, "CE5own": 0.8197, "A_eg5": 0.7904, "A+CE5eg": 0.8187, "A+F0": 0.7836, "A+CE5": 0.8187}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  20%|██        | 40/199 [00:00<00:00, 358.05it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1211.52it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce5": 30.2, "ce5_steps": 252, "t_total": 33.4, "auc": {"A": 0.8096, "F0": 0.741, "CE5": 0.789, "CE5own": 0.789, "A_eg5": 0.8096, "A+CE5eg": 0.8108, "A+F0": 0.797, "A+CE5": 0.8108}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 34/199 [00:00<00:00, 327.17it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1178.49it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce5": 31.2, "ce5_steps": 252, "t_total": 34.0, "auc": {"A": 0.7916, "F0": 0.746, "CE5": 0.7877, "CE5own": 0.7877, "A_eg5": 0.7916, "A+CE5eg": 0.8029, "A+F0": 0.7847, "A+CE5": 0.8029}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  24%|██▎       | 47/199 [00:00<00:00, 463.01it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1161.54it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce5": 30.5, "ce5_steps": 252, "t_total": 33.3, "auc": {"A": 0.7795, "F0": 0.7288, "CE5": 0.7872, "CE5own": 0.7872, "A_eg5": 0.7795, "A+CE5eg": 0.7964, "A+F0": 0.7744, "A+CE5": 0.7964}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 34/199 [00:00<00:00, 335.54it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1119.63it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce5": 31.2, "ce5_steps": 252, "t_total": 34.1, "auc": {"A": 0.7726, "F0": 0.7274, "CE5": 0.7638, "CE5own": 0.7638, "A_eg5": 0.7726, "A+CE5eg": 0.78, "A+F0": 0.7665, "A+CE5": 0.78}}
+
+finetune_mpnet_ce5  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7357  honest=0.5904+-0.0089 d=-0.0254 Q=0.4593 R=0.8275 fixed0.55=0.5915  venueAUC={'cav': 0.7088, 'kr': 0.7424, 'lics': 0.6459, 'lpnmr': 0.8406}
+CE5       AUC=0.7887  honest=0.6122+-0.0133 d=-0.0035 Q=0.4940 R=0.8107 fixed0.55=0.6155  venueAUC={'cav': 0.7609, 'kr': 0.7736, 'lics': 0.747, 'lpnmr': 0.8897}
+CE5own    AUC=0.7887  honest=0.6137+-0.0138 d=-0.0021 Q=0.4959 R=0.8107 fixed0.55=0.6170  venueAUC={'cav': 0.7609, 'kr': 0.7736, 'lics': 0.747, 'lpnmr': 0.8897}
+A_eg5     AUC=0.7877  honest=0.6178+-0.0075 d=+0.0021 Q=0.5141 R=0.7749 fixed0.55=0.6178  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+A+CE5eg   AUC=0.8002  honest=0.6256+-0.0117 d=+0.0099 Q=0.5226 R=0.7797 fixed0.55=0.6225  venueAUC={'cav': 0.7811, 'kr': 0.7819, 'lics': 0.7492, 'lpnmr': 0.9053}
+A+F0      AUC=0.7807  honest=0.6084+-0.0119 d=-0.0073 Q=0.5124 R=0.7510 fixed0.55=0.6112  venueAUC={'cav': 0.7612, 'kr': 0.7741, 'lics': 0.7072, 'lpnmr': 0.8972}
+A+CE5     AUC=0.8002  honest=0.6237+-0.0120 d=+0.0080 Q=0.5200 R=0.7797 fixed0.55=0.6205  venueAUC={'cav': 0.7811, 'kr': 0.7819, 'lics': 0.7492, 'lpnmr': 0.9053}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_mpnet_ce5.json

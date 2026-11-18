@@ -1,0 +1,19 @@
+finetune_minilm_smoke_cpu: device=cpu (cpu), torch 2.15.0+cpu, prefix=True, args={'enc': 'minilm', 'seeds': [0], 'folds': [0], 'methods': ['setfit', 'ce'], 'no_prefix': False, 'no_refit': False, 'sf_iters': 1, 'ce_epochs': 1, 'lr': 2e-05, 'tag': 'smoke_cpu'}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2191.65it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2303.67it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3056.73it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 8.4, "t_sf": 199.8, "sf_steps": 125, "t_ce": 43.2, "ce_steps": 63, "t_total": 286.3, "auc": {"A": 0.7904, "F0": 0.7474, "SF": 0.7802, "A[SF]": 0.7932, "CE": 0.7472, "A[CE]": 0.788, "A+F0": 0.7867, "A+SF": 0.7983, "A+CE": 0.795, "A+SF+CE": 0.799}}
+
+finetune_minilm_smoke_cpu  seeds=[0] folds=[0]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7904  honest=n/a  venueAUC={'cav': 0.7774, 'kr': 0.8161, 'lics': 0.6613, 'lpnmr': 0.9804}
+F0        AUC=0.7474  honest=n/a  venueAUC={'cav': 0.7295, 'kr': 0.7923, 'lics': 0.5999, 'lpnmr': 0.9216}
+SF        AUC=0.7802  honest=n/a  venueAUC={'cav': 0.7494, 'kr': 0.821, 'lics': 0.6451, 'lpnmr': 1.0}
+A[SF]     AUC=0.7932  honest=n/a  venueAUC={'cav': 0.762, 'kr': 0.8363, 'lics': 0.6764, 'lpnmr': 0.9804}
+CE        AUC=0.7472  honest=n/a  venueAUC={'cav': 0.6957, 'kr': 0.7685, 'lics': 0.6501, 'lpnmr': 0.9608}
+A[CE]     AUC=0.7880  honest=n/a  venueAUC={'cav': 0.7627, 'kr': 0.8234, 'lics': 0.6761, 'lpnmr': 0.9608}
+A+F0      AUC=0.7867  honest=n/a  venueAUC={'cav': 0.7785, 'kr': 0.8195, 'lics': 0.6325, 'lpnmr': 0.9804}
+A+SF      AUC=0.7983  honest=n/a  venueAUC={'cav': 0.7819, 'kr': 0.8278, 'lics': 0.6632, 'lpnmr': 1.0}
+A+CE      AUC=0.7950  honest=n/a  venueAUC={'cav': 0.7714, 'kr': 0.8213, 'lics': 0.6701, 'lpnmr': 1.0}
+A+SF+CE   AUC=0.7990  honest=n/a  venueAUC={'cav': 0.7812, 'kr': 0.828, 'lics': 0.6645, 'lpnmr': 1.0}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_minilm_smoke_cpu.json

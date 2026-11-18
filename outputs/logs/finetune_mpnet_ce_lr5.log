@@ -1,0 +1,21 @@
+finetune_mpnet_ce_lr5: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'mpnet', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 5e-05, 'seed_offset': 0, 'tag': 'ce_lr5', 'text': 'title', 'freeze_below': 0, 'max_len': 0}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 35/199 [00:00<00:00, 338.56it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1077.75it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  11%|█         | 22/199 [00:00<00:00, 215.67it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1013.88it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 30.8, "ce_steps": 252, "t_total": 34.0, "auc": {"A": 0.7904, "F0": 0.7362, "CE": 0.8021, "A+F0": 0.7836, "A+CE": 0.8087}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 25/199 [00:00<00:00, 234.65it/s]Loading weights:  25%|██▍       | 49/199 [00:00<00:00, 207.39it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 837.27it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 30.3, "ce_steps": 252, "t_total": 33.6, "auc": {"A": 0.8096, "F0": 0.741, "CE": 0.811, "A+F0": 0.797, "A+CE": 0.8234}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 33/199 [00:00<00:00, 319.64it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1041.73it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 31.2, "ce_steps": 252, "t_total": 34.1, "auc": {"A": 0.7916, "F0": 0.746, "CE": 0.7912, "A+F0": 0.7847, "A+CE": 0.8021}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  16%|█▌        | 31/199 [00:00<00:00, 306.53it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1041.16it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 30.8, "ce_steps": 252, "t_total": 33.8, "auc": {"A": 0.7795, "F0": 0.7288, "CE": 0.7919, "A+F0": 0.7744, "A+CE": 0.7996}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  16%|█▌        | 32/199 [00:00<00:00, 305.62it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1052.19it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 31.5, "ce_steps": 252, "t_total": 34.6, "auc": {"A": 0.7726, "F0": 0.7274, "CE": 0.7762, "A+F0": 0.7665, "A+CE": 0.7863}}
+
+finetune_mpnet_ce_lr5  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7357  honest=0.5904+-0.0089 d=-0.0254 Q=0.4593 R=0.8275 fixed0.55=0.5915  venueAUC={'cav': 0.7088, 'kr': 0.7424, 'lics': 0.6459, 'lpnmr': 0.8406}
+CE        AUC=0.7923  honest=0.6177+-0.0104 d=+0.0020 Q=0.5071 R=0.7963 fixed0.55=0.6199  venueAUC={'cav': 0.7723, 'kr': 0.7804, 'lics': 0.7483, 'lpnmr': 0.8822}
+A+F0      AUC=0.7807  honest=0.6084+-0.0119 d=-0.0073 Q=0.5124 R=0.7510 fixed0.55=0.6112  venueAUC={'cav': 0.7612, 'kr': 0.7741, 'lics': 0.7072, 'lpnmr': 0.8972}
+A+CE      AUC=0.8034  honest=0.6184+-0.0109 d=+0.0027 Q=0.5134 R=0.7834 fixed0.55=0.6215  venueAUC={'cav': 0.7853, 'kr': 0.7877, 'lics': 0.7557, 'lpnmr': 0.8992}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_mpnet_ce_lr5.json

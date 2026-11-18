@@ -1,0 +1,80 @@
+finetune_mpnet_ce_auth: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'mpnet', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce_auth', 'text': 'authors', 'freeze_below': 0, 'max_len': 128}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 24/199 [00:00<00:00, 223.54it/s]Loading weights:  29%|██▊       | 57/199 [00:00<00:00, 271.79it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 777.05it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 35/199 [00:00<00:00, 345.87it/s]Loading weights:  35%|███▌      | 70/199 [00:00<00:00, 307.06it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 712.86it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\BachKhoa\hk261\DM\assignment\research\finetune_cv.py", line 408, in <module>
+    main()
+    ~~~~^^
+  File "D:\BachKhoa\hk261\DM\assignment\research\finetune_cv.py", line 337, in main
+    t1 = time.time(); pred, steps = train_ce(m, tx_f, yb, fs, device, epochs=a.ce_epochs, lr=a.lr)
+                                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\research\finetune_cv.py", line 199, in train_ce
+    e = forward(model, [texts[i] for i in bi], device).float()
+        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\research\finetune_cv.py", line 107, in forward
+    return model(feats)["sentence_embedding"]
+           ~~~~~^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\sentence_transformers\base\model.py", line 642, in forward
+    input = module(input, **module_kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1692, in forward
+    model_output = model_method(**filtered_kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\transformers\models\mpnet\modeling_mpnet.py", line 420, in forward
+    encoder_outputs = self.encoder(
+        embedding_output,
+    ...<3 lines>...
+        return_dict=return_dict,
+    )
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\transformers\models\mpnet\modeling_mpnet.py", line 288, in forward
+    layer_outputs = layer_module(
+        hidden_states,
+    ...<3 lines>...
+        **kwargs,
+    )
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\transformers\models\mpnet\modeling_mpnet.py", line 249, in forward
+    self_attention_outputs = self.attention(
+        hidden_states,
+    ...<2 lines>...
+        output_attentions=output_attentions,
+    )
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\transformers\models\mpnet\modeling_mpnet.py", line 192, in forward
+    self_outputs = self.attn(
+        hidden_states,
+    ...<2 lines>...
+        output_attentions=output_attentions,
+    )
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\nn\modules\module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\transformers\models\mpnet\modeling_mpnet.py", line 165, in forward
+    c = torch.matmul(attention_probs, v)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 4.00 GiB of which 0 bytes is free. Including non-PyTorch memory, this process has 17179869184.00 GiB memory in use. Of the allocated memory 3.33 GiB is allocated by PyTorch, and 135.89 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

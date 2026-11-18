@@ -1,0 +1,15 @@
+20:28:26 start e5_base s12 --methods ce --seeds 1 2 --no-refit
+20:34:25 done  e5_base s12 exit=0
+20:34:25 start bge_base s12 --methods ce --seeds 1 2 --no-refit
+20:40:07 done  bge_base s12 exit=0
+20:40:07 start gte_base s12 --methods ce --seeds 1 2 --no-refit
+20:45:54 done  gte_base s12 exit=0
+20:45:54 start specter2 s12 --methods ce --seeds 1 2 --no-refit
+20:51:36 done  specter2 s12 exit=0
+20:51:36 start minilm_l12 s12 --methods ce --seeds 1 2 --no-refit
+20:54:57 done  minilm_l12 s12 exit=0
+20:54:57 start distilroberta s12 --methods ce --seeds 1 2 --no-refit
+20:58:32 done  distilroberta s12 exit=0
+20:58:32 start scibert s12 --methods ce --seeds 1 2 --no-refit
+21:04:19 done  scibert s12 exit=0
+21:04:19 queue finished

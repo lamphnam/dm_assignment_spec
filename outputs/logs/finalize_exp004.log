@@ -1,0 +1,27 @@
+exp003 (A), run_experiment procedure on research OOF: t=0.55 CV=0.6178±0.0097
+ft_ens_v1: t=0.60 CV=0.6302±0.0091 (Q=0.5226, R=0.7955) delta=+0.0123; AUC 0.7901 -> 0.8101
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2617.69it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\autograd\graph.py:1113: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu:951.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   6%|▌         | 12/199 [00:00<00:01, 101.88it/s]Loading weights:  13%|█▎        | 25/199 [00:00<00:01, 115.46it/s]Loading weights:  19%|█▊        | 37/199 [00:00<00:01, 115.12it/s]Loading weights:  27%|██▋       | 54/199 [00:00<00:01, 135.47it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 445.85it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   8%|▊         | 15/199 [00:00<00:01, 148.05it/s]Loading weights:  18%|█▊        | 35/199 [00:00<00:00, 176.32it/s]Loading weights:  27%|██▋       | 53/199 [00:00<00:00, 163.09it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 539.94it/s]
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\torch\autograd\graph.py:1113: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu:951.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   9%|▉         | 18/199 [00:00<00:01, 177.96it/s]Loading weights:  20%|█▉        | 39/199 [00:00<00:00, 195.64it/s]Loading weights:  31%|███       | 62/199 [00:00<00:00, 202.98it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 513.50it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1841.30it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 28/199 [00:00<00:00, 279.91it/s]Loading weights:  28%|██▊       | 56/199 [00:00<00:00, 240.66it/s]Loading weights:  41%|████      | 81/199 [00:00<00:00, 224.12it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 524.65it/s]
+parity (seed 0, fold 0): {"prod_auc": 0.815, "research_auc": 0.815, "prod_score_t": 0.6282, "research_score_t": 0.6282, "pb_corr": 1.0}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2653.03it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  10%|▉         | 19/199 [00:00<00:01, 173.49it/s]Loading weights:  21%|██        | 41/199 [00:00<00:00, 195.01it/s]Loading weights:  32%|███▏      | 64/199 [00:00<00:00, 209.94it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 617.30it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  10%|█         | 20/199 [00:00<00:00, 197.33it/s]Loading weights:  20%|██        | 40/199 [00:00<00:01, 150.95it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 587.45it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   9%|▊         | 17/199 [00:00<00:01, 156.21it/s]Loading weights:  23%|██▎       | 45/199 [00:00<00:00, 214.23it/s]Loading weights:  34%|███▎      | 67/199 [00:00<00:00, 197.36it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 575.33it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2473.28it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▎        | 27/199 [00:00<00:00, 260.66it/s]Loading weights:  27%|██▋       | 54/199 [00:00<00:00, 220.76it/s]Loading weights:  41%|████      | 81/199 [00:00<00:00, 195.17it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 443.95it/s]
+file: D:\BachKhoa\hk261\DM\assignment\submissions\exp004_ft_ens_v1.csv
+sha256: a89e78ee4b4facd1df0709d8b4c71692e8b18ef335032ad2c8040877dee8878a
+rows: 596  selected (priority>0): 353  share: 0.592
+RESULT: VALID
+test: selected 353/596 by venue {'cav': 118, 'kr': 115, 'lics': 84, 'lpnmr': 36}; mean pb 0.635
+wrote submissions/exp004_ft_ens_v1.csv sha256=a89e78ee4b4facd1...
+exit=0

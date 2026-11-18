@@ -1,0 +1,31 @@
+finetune_distilroberta_s12: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'distilroberta', 'seeds': [1, 2], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 's12', 'text': 'title', 'freeze_below': 0, 'max_len': 0}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:  29%|██▉       | 30/103 [00:00<00:00, 248.58it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 833.60it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1046.10it/s]
+[seed 1 fold 0] {"seed": 1, "fold": 0, "t_A": 0.0, "t_ce": 17.6, "ce_steps": 252, "t_total": 20.1, "auc": {"A": 0.7823, "F0": 0.7524, "CE": 0.8134, "A+F0": 0.7898, "A+CE": 0.8162}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:  14%|█▎        | 14/103 [00:00<00:00, 133.11it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 572.81it/s]
+[seed 1 fold 1] {"seed": 1, "fold": 1, "t_A": 0.0, "t_ce": 17.1, "ce_steps": 252, "t_total": 19.7, "auc": {"A": 0.7673, "F0": 0.7413, "CE": 0.7857, "A+F0": 0.7732, "A+CE": 0.7905}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1083.76it/s]
+[seed 1 fold 2] {"seed": 1, "fold": 2, "t_A": 0.0, "t_ce": 17.1, "ce_steps": 252, "t_total": 19.6, "auc": {"A": 0.7994, "F0": 0.7616, "CE": 0.8131, "A+F0": 0.8022, "A+CE": 0.8188}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:  48%|████▊     | 49/103 [00:00<00:00, 489.71it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1002.48it/s]
+[seed 1 fold 3] {"seed": 1, "fold": 3, "t_A": 0.0, "t_ce": 17.1, "ce_steps": 252, "t_total": 19.4, "auc": {"A": 0.8137, "F0": 0.7689, "CE": 0.8126, "A+F0": 0.8114, "A+CE": 0.8239}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1072.30it/s]
+[seed 1 fold 4] {"seed": 1, "fold": 4, "t_A": 0.0, "t_ce": 17.1, "ce_steps": 252, "t_total": 19.4, "auc": {"A": 0.7983, "F0": 0.7637, "CE": 0.828, "A+F0": 0.8018, "A+CE": 0.8311}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1073.70it/s]
+[seed 2 fold 0] {"seed": 2, "fold": 0, "t_A": 0.0, "t_ce": 17.1, "ce_steps": 252, "t_total": 19.5, "auc": {"A": 0.7949, "F0": 0.7773, "CE": 0.8094, "A+F0": 0.806, "A+CE": 0.8129}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1046.00it/s]
+[seed 2 fold 1] {"seed": 2, "fold": 1, "t_A": 0.0, "t_ce": 17.2, "ce_steps": 252, "t_total": 19.5, "auc": {"A": 0.7621, "F0": 0.7325, "CE": 0.7796, "A+F0": 0.7686, "A+CE": 0.7857}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:  42%|████▏     | 43/103 [00:00<00:00, 417.89it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 959.16it/s]
+[seed 2 fold 2] {"seed": 2, "fold": 2, "t_A": 0.0, "t_ce": 17.0, "ce_steps": 252, "t_total": 19.5, "auc": {"A": 0.7842, "F0": 0.7377, "CE": 0.7906, "A+F0": 0.7827, "A+CE": 0.8032}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1037.95it/s]
+[seed 2 fold 3] {"seed": 2, "fold": 3, "t_A": 0.0, "t_ce": 17.2, "ce_steps": 252, "t_total": 19.7, "auc": {"A": 0.7994, "F0": 0.7542, "CE": 0.8181, "A+F0": 0.7965, "A+CE": 0.8246}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1096.28it/s]
+[seed 2 fold 4] {"seed": 2, "fold": 4, "t_A": 0.0, "t_ce": 17.0, "ce_steps": 252, "t_total": 19.4, "auc": {"A": 0.812, "F0": 0.7415, "CE": 0.7975, "A+F0": 0.8026, "A+CE": 0.8175}}
+
+finetune_distilroberta_s12  seeds=[1, 2] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7913  honest=0.6179+-0.0103 d=+0.0000 Q=0.5107 R=0.7839 fixed0.55=0.6189  venueAUC={'cav': 0.7829, 'kr': 0.7738, 'lics': 0.7257, 'lpnmr': 0.8892}
+F0        AUC=0.7519  honest=0.6073+-0.0091 d=-0.0106 Q=0.4802 R=0.8308 fixed0.55=0.6051  venueAUC={'cav': 0.7472, 'kr': 0.746, 'lics': 0.6621, 'lpnmr': 0.8543}
+CE        AUC=0.8036  honest=0.6211+-0.0059 d=+0.0032 Q=0.5043 R=0.8140 fixed0.55=0.6224  venueAUC={'cav': 0.7947, 'kr': 0.7945, 'lics': 0.7437, 'lpnmr': 0.8853}
+A+F0      AUC=0.7928  honest=0.6170+-0.0106 d=-0.0009 Q=0.5210 R=0.7615 fixed0.55=0.6179  venueAUC={'cav': 0.7897, 'kr': 0.7826, 'lics': 0.7166, 'lpnmr': 0.8976}
+A+CE      AUC=0.8119  honest=0.6273+-0.0116 d=+0.0094 Q=0.5254 R=0.7806 fixed0.55=0.6257  venueAUC={'cav': 0.8066, 'kr': 0.7946, 'lics': 0.7519, 'lpnmr': 0.9051}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_distilroberta_s12.json

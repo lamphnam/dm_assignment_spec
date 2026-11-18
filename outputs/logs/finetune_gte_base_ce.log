@@ -1,0 +1,27 @@
+finetune_gte_base_ce: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'gte_base', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce', 'text': 'title', 'freeze_below': 0, 'max_len': 0}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\ADMIN\.cache\huggingface\hub\models--thenlper--gte-base. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\ADMIN\.cache\huggingface\hub. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  61%|██████    | 121/199 [00:00<00:00, 1188.50it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1194.22it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  38%|███▊      | 75/199 [00:00<00:00, 702.62it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1050.73it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 29.3, "ce_steps": 252, "t_total": 33.0, "auc": {"A": 0.7904, "F0": 0.7656, "CE": 0.7959, "A+F0": 0.7981, "A+CE": 0.8075}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  47%|████▋     | 94/199 [00:00<00:00, 908.53it/s]Loading weights:  96%|█████████▋| 192/199 [00:00<00:00, 945.74it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 965.30it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 29.0, "ce_steps": 252, "t_total": 32.7, "auc": {"A": 0.8096, "F0": 0.7856, "CE": 0.7879, "A+F0": 0.8163, "A+CE": 0.8111}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  54%|█████▍    | 108/199 [00:00<00:00, 1029.13it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1072.96it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 29.2, "ce_steps": 252, "t_total": 32.5, "auc": {"A": 0.7916, "F0": 0.7525, "CE": 0.781, "A+F0": 0.791, "A+CE": 0.7958}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  51%|█████▏    | 102/199 [00:00<00:00, 992.70it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1080.00it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 28.9, "ce_steps": 252, "t_total": 32.3, "auc": {"A": 0.7795, "F0": 0.744, "CE": 0.7882, "A+F0": 0.7828, "A+CE": 0.7966}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  51%|█████     | 101/199 [00:00<00:00, 1002.96it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1037.00it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 29.4, "ce_steps": 252, "t_total": 33.0, "auc": {"A": 0.7726, "F0": 0.7519, "CE": 0.78, "A+F0": 0.7779, "A+CE": 0.7889}}
+
+finetune_gte_base_ce  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7593  honest=0.6078+-0.0131 d=-0.0079 Q=0.4998 R=0.7780 fixed0.55=0.6088  venueAUC={'cav': 0.7309, 'kr': 0.771, 'lics': 0.6757, 'lpnmr': 0.8657}
+CE        AUC=0.7853  honest=0.6168+-0.0060 d=+0.0011 Q=0.5149 R=0.7714 fixed0.55=0.6145  venueAUC={'cav': 0.7499, 'kr': 0.7807, 'lics': 0.7421, 'lpnmr': 0.8822}
+A+F0      AUC=0.7924  honest=0.6118+-0.0096 d=-0.0039 Q=0.5094 R=0.7685 fixed0.55=0.6146  venueAUC={'cav': 0.7741, 'kr': 0.7854, 'lics': 0.722, 'lpnmr': 0.9088}
+A+CE      AUC=0.7992  honest=0.6159+-0.0093 d=+0.0002 Q=0.5108 R=0.7804 fixed0.55=0.6211  venueAUC={'cav': 0.7747, 'kr': 0.7868, 'lics': 0.7493, 'lpnmr': 0.9108}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_gte_base_ce.json

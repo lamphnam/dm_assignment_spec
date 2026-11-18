@@ -1,0 +1,15 @@
+19:57:24 start e5_base ce --methods ce --no-refit
+20:01:09 done  e5_base ce exit=0
+20:01:09 start bge_base ce --methods ce --no-refit
+20:04:36 done  bge_base ce exit=0
+20:04:36 start gte_base ce --methods ce --no-refit
+20:07:51 done  gte_base ce exit=0
+20:07:51 start specter2 ce --methods ce --no-refit
+20:11:05 done  specter2 ce exit=0
+20:11:05 start minilm_l12 ce --methods ce --no-refit
+20:13:02 done  minilm_l12 ce exit=0
+20:13:02 start distilroberta ce --methods ce --no-refit
+20:15:09 done  distilroberta ce exit=0
+20:15:09 start scibert ce --methods ce --no-refit
+20:18:22 done  scibert ce exit=0
+20:18:22 queue finished

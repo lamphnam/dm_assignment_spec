@@ -1,0 +1,5 @@
+04:01:19 start minilm ce5 --methods ce5 --no-refit
+04:02:29 done  minilm ce5 exit=0
+04:02:29 start mpnet ce5 --methods ce5 --no-refit
+04:05:36 done  mpnet ce5 exit=0
+04:05:36 queue finished

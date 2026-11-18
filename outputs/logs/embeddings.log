@@ -1,0 +1,20 @@
+[gte_large] loading thenlper/gte-large (float32, cpu)
+[gte_large] loaded in 4s; dtype=torch.float32; encoding 3090 titles
+[gte_large] 64/3090 titles  9s
+[gte_large] 704/3090 titles  87s
+[gte_large] 1344/3090 titles  162s
+[gte_large] 1984/3090 titles  226s
+[gte_large] 2624/3090 titles  283s
+[gte_large] 3090/3090 titles  327s
+[gte_large] done in 327s -> emb_gte_large.npz
+gte_large (3090, 1024)
+[scincl] loading malteos/scincl (float32, cpu)
+[scincl] loaded in 23s; dtype=torch.float32; encoding 3090 titles
+[scincl] 64/3090 titles  24s
+[scincl] 704/3090 titles  46s
+[scincl] 1344/3090 titles  66s
+[scincl] 1984/3090 titles  86s
+[scincl] 2624/3090 titles  104s
+[scincl] 3090/3090 titles  119s
+[scincl] done in 119s -> emb_scincl.npz
+scincl (3090, 768)

@@ -1,0 +1,40 @@
+finetune_specter_bag1: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'specter', 'seeds': [0, 1, 2], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 1, 'tag': 'bag1'}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 35/199 [00:00<00:00, 345.55it/s]Loading weights:  39%|███▊      | 77/199 [00:00<00:00, 388.97it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 965.80it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  21%|██        | 41/199 [00:00<00:00, 384.54it/s]Loading weights:  41%|████      | 81/199 [00:00<00:00, 382.92it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 886.27it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 30.8, "ce_steps": 252, "t_total": 33.8, "auc": {"A": 0.7904, "F0": 0.7443, "CE": 0.7852, "A+F0": 0.7943, "A+CE": 0.8033}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  20%|█▉        | 39/199 [00:00<00:00, 384.33it/s]Loading weights:  46%|████▌     | 92/199 [00:00<00:00, 469.41it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 970.46it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 29.9, "ce_steps": 252, "t_total": 32.8, "auc": {"A": 0.8096, "F0": 0.7597, "CE": 0.7954, "A+F0": 0.8083, "A+CE": 0.8139}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 55/199 [00:00<00:00, 541.83it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1118.43it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 31.0, "ce_steps": 252, "t_total": 33.6, "auc": {"A": 0.7916, "F0": 0.7447, "CE": 0.7933, "A+F0": 0.7952, "A+CE": 0.8087}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  26%|██▌       | 52/199 [00:00<00:00, 502.70it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1034.89it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 31.2, "ce_steps": 252, "t_total": 34.2, "auc": {"A": 0.7795, "F0": 0.7333, "CE": 0.7819, "A+F0": 0.7817, "A+CE": 0.7916}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  11%|█         | 21/199 [00:00<00:00, 208.58it/s]Loading weights:  21%|██        | 42/199 [00:00<00:00, 194.48it/s]Loading weights:  31%|███       | 62/199 [00:00<00:00, 185.02it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 583.92it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 31.0, "ce_steps": 252, "t_total": 34.2, "auc": {"A": 0.7726, "F0": 0.7182, "CE": 0.7712, "A+F0": 0.7698, "A+CE": 0.7862}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  16%|█▌        | 32/199 [00:00<00:00, 315.43it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1064.43it/s]
+[seed 1 fold 0] {"seed": 1, "fold": 0, "t_A": 0.0, "t_ce": 30.2, "ce_steps": 252, "t_total": 33.1, "auc": {"A": 0.7823, "F0": 0.7429, "CE": 0.7905, "A+F0": 0.7829, "A+CE": 0.8}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 26/199 [00:00<00:00, 248.88it/s]Loading weights:  28%|██▊       | 56/199 [00:00<00:00, 268.91it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 645.73it/s]
+[seed 1 fold 1] {"seed": 1, "fold": 1, "t_A": 0.0, "t_ce": 31.1, "ce_steps": 252, "t_total": 34.1, "auc": {"A": 0.7673, "F0": 0.7388, "CE": 0.7712, "A+F0": 0.7746, "A+CE": 0.7846}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  16%|█▌        | 31/199 [00:00<00:00, 293.05it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1010.60it/s]
+[seed 1 fold 2] {"seed": 1, "fold": 2, "t_A": 0.0, "t_ce": 30.3, "ce_steps": 252, "t_total": 32.9, "auc": {"A": 0.7994, "F0": 0.729, "CE": 0.7841, "A+F0": 0.7896, "A+CE": 0.8008}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 28/199 [00:00<00:00, 267.00it/s]Loading weights:  28%|██▊       | 55/199 [00:00<00:00, 256.62it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 833.87it/s]
+[seed 1 fold 3] {"seed": 1, "fold": 3, "t_A": 0.0, "t_ce": 30.9, "ce_steps": 252, "t_total": 33.7, "auc": {"A": 0.8137, "F0": 0.767, "CE": 0.7965, "A+F0": 0.8153, "A+CE": 0.8186}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  21%|██        | 41/199 [00:00<00:00, 401.91it/s]Loading weights:  48%|████▊     | 96/199 [00:00<00:00, 488.23it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 966.55it/s]
+[seed 1 fold 4] {"seed": 1, "fold": 4, "t_A": 0.0, "t_ce": 30.1, "ce_steps": 252, "t_total": 32.8, "auc": {"A": 0.7983, "F0": 0.7601, "CE": 0.8031, "A+F0": 0.8041, "A+CE": 0.8145}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 36/199 [00:00<00:00, 350.38it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1041.95it/s]
+[seed 2 fold 0] {"seed": 2, "fold": 0, "t_A": 0.0, "t_ce": 30.7, "ce_steps": 252, "t_total": 33.4, "auc": {"A": 0.7949, "F0": 0.7506, "CE": 0.7815, "A+F0": 0.7953, "A+CE": 0.8006}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 34/199 [00:00<00:00, 336.25it/s]Loading weights:  58%|█████▊    | 115/199 [00:00<00:00, 613.56it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 975.91it/s]
+[seed 2 fold 1] {"seed": 2, "fold": 1, "t_A": 0.0, "t_ce": 30.2, "ce_steps": 252, "t_total": 32.9, "auc": {"A": 0.7621, "F0": 0.7132, "CE": 0.7732, "A+F0": 0.764, "A+CE": 0.7818}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 26/199 [00:00<00:00, 250.36it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1051.31it/s]
+[seed 2 fold 2] {"seed": 2, "fold": 2, "t_A": 0.0, "t_ce": 30.1, "ce_steps": 252, "t_total": 32.9, "auc": {"A": 0.7842, "F0": 0.7179, "CE": 0.7752, "A+F0": 0.7775, "A+CE": 0.7898}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 33/199 [00:00<00:00, 324.70it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1095.34it/s]
+[seed 2 fold 3] {"seed": 2, "fold": 3, "t_A": 0.0, "t_ce": 29.8, "ce_steps": 252, "t_total": 32.7, "auc": {"A": 0.7994, "F0": 0.7591, "CE": 0.8034, "A+F0": 0.8021, "A+CE": 0.8163}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  16%|█▌        | 32/199 [00:00<00:00, 313.48it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1035.04it/s]
+[seed 2 fold 4] {"seed": 2, "fold": 4, "t_A": 0.0, "t_ce": 30.8, "ce_steps": 252, "t_total": 33.4, "auc": {"A": 0.812, "F0": 0.7706, "CE": 0.7999, "A+F0": 0.8149, "A+CE": 0.8173}}
+
+finetune_specter_bag1  seeds=[0, 1, 2] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7901  honest=0.6172+-0.0095 d=+0.0000 Q=0.5109 R=0.7809 fixed0.55=0.6178  venueAUC={'cav': 0.7798, 'kr': 0.7735, 'lics': 0.7242, 'lpnmr': 0.8904}
+F0        AUC=0.7429  honest=0.6055+-0.0104 d=-0.0117 Q=0.4731 R=0.8444 fixed0.55=0.6011  venueAUC={'cav': 0.7349, 'kr': 0.698, 'lics': 0.6889, 'lpnmr': 0.7461}
+CE        AUC=0.7862  honest=0.6178+-0.0073 d=+0.0006 Q=0.5097 R=0.7866 fixed0.55=0.6196  venueAUC={'cav': 0.7619, 'kr': 0.7643, 'lics': 0.7477, 'lpnmr': 0.872}
+A+F0      AUC=0.7912  honest=0.6191+-0.0113 d=+0.0019 Q=0.5029 R=0.8073 fixed0.55=0.6195  venueAUC={'cav': 0.7831, 'kr': 0.7653, 'lics': 0.7335, 'lpnmr': 0.882}
+A+CE      AUC=0.8016  honest=0.6213+-0.0076 d=+0.0041 Q=0.5085 R=0.8026 fixed0.55=0.6243  venueAUC={'cav': 0.7836, 'kr': 0.7795, 'lics': 0.7564, 'lpnmr': 0.8982}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_specter_bag1.json

@@ -1,0 +1,24 @@
+finetune_specter2_ce5: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'specter2', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce5'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce5', 'text': 'title', 'freeze_below': 0, 'max_len': 0}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 20119.72it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 28688.61it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce5": 28.6, "ce5_steps": 252, "t_total": 31.8, "auc": {"A": 0.7904, "F0": 0.7748, "CE5": 0.8018, "CE5own": 0.8018, "A_eg5": 0.7904, "A+CE5eg": 0.8123, "A+F0": 0.8036, "A+CE5": 0.8123}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 15856.43it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce5": 28.5, "ce5_steps": 252, "t_total": 31.5, "auc": {"A": 0.8096, "F0": 0.8101, "CE5": 0.8161, "CE5own": 0.8161, "A_eg5": 0.8096, "A+CE5eg": 0.8262, "A+F0": 0.8265, "A+CE5": 0.8262}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 18725.83it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce5": 29.6, "ce5_steps": 252, "t_total": 32.5, "auc": {"A": 0.7916, "F0": 0.7705, "CE5": 0.8164, "CE5own": 0.8164, "A_eg5": 0.7916, "A+CE5eg": 0.8194, "A+F0": 0.8008, "A+CE5": 0.8194}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 14591.05it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce5": 28.9, "ce5_steps": 252, "t_total": 31.8, "auc": {"A": 0.7795, "F0": 0.7689, "CE5": 0.7901, "CE5own": 0.7901, "A_eg5": 0.7795, "A+CE5eg": 0.7978, "A+F0": 0.7891, "A+CE5": 0.7978}}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 17485.42it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce5": 29.6, "ce5_steps": 252, "t_total": 32.6, "auc": {"A": 0.7726, "F0": 0.7641, "CE5": 0.7891, "CE5own": 0.7891, "A_eg5": 0.7726, "A+CE5eg": 0.7955, "A+F0": 0.7819, "A+CE5": 0.7955}}
+
+finetune_specter2_ce5  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7769  honest=0.6120+-0.0110 d=-0.0037 Q=0.4844 R=0.8325 fixed0.55=0.6125  venueAUC={'cav': 0.7598, 'kr': 0.7478, 'lics': 0.7201, 'lpnmr': 0.8571}
+CE5       AUC=0.7999  honest=0.6193+-0.0058 d=+0.0036 Q=0.5180 R=0.7778 fixed0.55=0.6197  venueAUC={'cav': 0.7741, 'kr': 0.7877, 'lics': 0.7532, 'lpnmr': 0.9073}
+CE5own    AUC=0.7999  honest=0.6203+-0.0073 d=+0.0046 Q=0.5194 R=0.7778 fixed0.55=0.6207  venueAUC={'cav': 0.7741, 'kr': 0.7877, 'lics': 0.7532, 'lpnmr': 0.9073}
+A_eg5     AUC=0.7877  honest=0.6182+-0.0081 d=+0.0025 Q=0.5146 R=0.7749 fixed0.55=0.6182  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+A+CE5eg   AUC=0.8083  honest=0.6267+-0.0102 d=+0.0109 Q=0.5223 R=0.7863 fixed0.55=0.6267  venueAUC={'cav': 0.7908, 'kr': 0.7911, 'lics': 0.7583, 'lpnmr': 0.9208}
+A+F0      AUC=0.7991  honest=0.6212+-0.0127 d=+0.0055 Q=0.5121 R=0.7902 fixed0.55=0.6212  venueAUC={'cav': 0.7893, 'kr': 0.7759, 'lics': 0.7384, 'lpnmr': 0.9158}
+A+CE5     AUC=0.8083  honest=0.6245+-0.0102 d=+0.0087 Q=0.5192 R=0.7863 fixed0.55=0.6245  venueAUC={'cav': 0.7908, 'kr': 0.7911, 'lics': 0.7583, 'lpnmr': 0.9208}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_specter2_ce5.json

@@ -1,0 +1,17 @@
+text mode = abstract, embedding models = ['specter']
+text source: {'abstract': 1502, 'title_only': 522, 'tldr': 470}
+worth-rate by text source: {'abstract': 0.628, 'title_only': 0.584, 'tldr': 0.73}
+  [abs specter] 64/2494  29s
+  [abs specter] 576/2494  178s
+  [abs specter] 1088/2494  324s
+  [abs specter] 1600/2494  487s
+  [abs specter] 2112/2494  658s
+A done 29s
+B done 44s
+C done 21s
+
+seed-0 folds, non-iclp scored
+A exp003 (title only)                         honest=0.6157±0.0078 Q=0.5112 R=0.7749 fixed0.55=0.6157 AUC=0.7877
+B exp003 + abstract[specter]                  honest=0.6078±0.0136 Q=0.5213 R=0.7384 fixed0.55=0.6115 AUC=0.7884
+C abstract[specter] replaces title emb        honest=0.5967±0.0100 Q=0.4768 R=0.8006 fixed0.55=0.6013 AUC=0.7637
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\abstract_cv_abstract_specter.json

@@ -1,0 +1,5 @@
+03:53:18 start mpnet ce --methods ce
+03:57:19 done  mpnet ce exit=0
+03:57:19 start specter ce --methods ce
+04:01:13 done  specter ce exit=0
+04:01:13 queue finished

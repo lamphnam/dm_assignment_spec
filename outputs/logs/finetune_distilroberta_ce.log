@@ -1,0 +1,27 @@
+finetune_distilroberta_ce: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'distilroberta', 'seeds': [0], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 0, 'tag': 'ce', 'text': 'title', 'freeze_below': 0, 'max_len': 0}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\ADMIN\.cache\huggingface\hub\models--sentence-transformers--all-distilroberta-v1. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+D:\BachKhoa\hk261\DM\assignment\.venv-gpu\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\ADMIN\.cache\huggingface\hub. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1639.95it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1109.96it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 17.1, "ce_steps": 252, "t_total": 19.5, "auc": {"A": 0.7904, "F0": 0.7642, "CE": 0.829, "A+F0": 0.7964, "A+CE": 0.8273}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1051.99it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 16.8, "ce_steps": 252, "t_total": 19.3, "auc": {"A": 0.8096, "F0": 0.7691, "CE": 0.8229, "A+F0": 0.8121, "A+CE": 0.8302}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:  46%|████▌     | 47/103 [00:00<00:00, 459.60it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 920.39it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 17.2, "ce_steps": 252, "t_total": 19.5, "auc": {"A": 0.7916, "F0": 0.7475, "CE": 0.8037, "A+F0": 0.7886, "A+CE": 0.8104}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1080.22it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 17.0, "ce_steps": 252, "t_total": 19.4, "auc": {"A": 0.7795, "F0": 0.7461, "CE": 0.7793, "A+F0": 0.784, "A+CE": 0.7912}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1211.20it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 17.3, "ce_steps": 252, "t_total": 19.7, "auc": {"A": 0.7726, "F0": 0.7334, "CE": 0.7908, "A+F0": 0.7749, "A+CE": 0.7985}}
+
+finetune_distilroberta_ce  seeds=[0] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7877  honest=0.6157+-0.0078 d=+0.0000 Q=0.5112 R=0.7749 fixed0.55=0.6157  venueAUC={'cav': 0.7732, 'kr': 0.773, 'lics': 0.7208, 'lpnmr': 0.8972}
+F0        AUC=0.7511  honest=0.6038+-0.0049 d=-0.0119 Q=0.4761 R=0.8284 fixed0.55=0.6037  venueAUC={'cav': 0.7381, 'kr': 0.7347, 'lics': 0.6731, 'lpnmr': 0.8802}
+CE        AUC=0.8039  honest=0.6180+-0.0134 d=+0.0023 Q=0.4982 R=0.8188 fixed0.55=0.6220  venueAUC={'cav': 0.7857, 'kr': 0.7867, 'lics': 0.7655, 'lpnmr': 0.8912}
+A+F0      AUC=0.7902  honest=0.6158+-0.0099 d=+0.0001 Q=0.5034 R=0.7941 fixed0.55=0.6168  venueAUC={'cav': 0.7814, 'kr': 0.7757, 'lics': 0.7187, 'lpnmr': 0.9128}
+A+CE      AUC=0.8104  honest=0.6187+-0.0128 d=+0.0030 Q=0.5042 R=0.8103 fixed0.55=0.6222  venueAUC={'cav': 0.7968, 'kr': 0.7899, 'lics': 0.7633, 'lpnmr': 0.9068}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_distilroberta_ce.json

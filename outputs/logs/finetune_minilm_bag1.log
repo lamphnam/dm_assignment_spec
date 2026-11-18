@@ -1,0 +1,41 @@
+finetune_minilm_bag1: device=cuda (NVIDIA GeForce RTX 3050 Laptop GPU), torch 2.15.0+cu132, prefix=True, args={'enc': 'minilm', 'seeds': [0, 1, 2], 'folds': [0, 1, 2, 3, 4], 'methods': ['ce'], 'no_prefix': False, 'no_refit': True, 'sf_iters': 10, 'ce_epochs': 4, 'lr': 2e-05, 'seed_offset': 1, 'tag': 'bag1'}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3353.46it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2785.51it/s]
+[seed 0 fold 0] {"seed": 0, "fold": 0, "t_A": 0.0, "t_ce": 10.5, "ce_steps": 252, "t_total": 12.4, "auc": {"A": 0.7904, "F0": 0.7474, "CE": 0.8077, "A+F0": 0.7867, "A+CE": 0.8118}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3504.72it/s]
+[seed 0 fold 1] {"seed": 0, "fold": 1, "t_A": 0.0, "t_ce": 9.2, "ce_steps": 252, "t_total": 11.0, "auc": {"A": 0.8096, "F0": 0.7377, "CE": 0.798, "A+F0": 0.7973, "A+CE": 0.8192}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3539.82it/s]
+[seed 0 fold 2] {"seed": 0, "fold": 2, "t_A": 0.0, "t_ce": 10.0, "ce_steps": 252, "t_total": 12.0, "auc": {"A": 0.7916, "F0": 0.7291, "CE": 0.8078, "A+F0": 0.7771, "A+CE": 0.8109}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2890.28it/s]
+[seed 0 fold 3] {"seed": 0, "fold": 3, "t_A": 0.0, "t_ce": 10.9, "ce_steps": 252, "t_total": 12.7, "auc": {"A": 0.7795, "F0": 0.7255, "CE": 0.7726, "A+F0": 0.7702, "A+CE": 0.7859}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3548.28it/s]
+[seed 0 fold 4] {"seed": 0, "fold": 4, "t_A": 0.0, "t_ce": 9.3, "ce_steps": 252, "t_total": 11.1, "auc": {"A": 0.7726, "F0": 0.7249, "CE": 0.7844, "A+F0": 0.7666, "A+CE": 0.7908}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3805.14it/s]
+[seed 1 fold 0] {"seed": 1, "fold": 0, "t_A": 0.0, "t_ce": 10.3, "ce_steps": 252, "t_total": 12.2, "auc": {"A": 0.7823, "F0": 0.7303, "CE": 0.7793, "A+F0": 0.7731, "A+CE": 0.7923}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3075.16it/s]
+[seed 1 fold 1] {"seed": 1, "fold": 1, "t_A": 0.0, "t_ce": 10.3, "ce_steps": 252, "t_total": 12.4, "auc": {"A": 0.7673, "F0": 0.6963, "CE": 0.762, "A+F0": 0.7498, "A+CE": 0.7761}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3753.99it/s]
+[seed 1 fold 2] {"seed": 1, "fold": 2, "t_A": 0.0, "t_ce": 9.1, "ce_steps": 252, "t_total": 10.9, "auc": {"A": 0.7994, "F0": 0.7245, "CE": 0.7884, "A+F0": 0.7805, "A+CE": 0.8047}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3458.57it/s]
+[seed 1 fold 3] {"seed": 1, "fold": 3, "t_A": 0.0, "t_ce": 9.0, "ce_steps": 252, "t_total": 10.7, "auc": {"A": 0.8137, "F0": 0.7521, "CE": 0.8121, "A+F0": 0.8056, "A+CE": 0.8261}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3479.24it/s]
+[seed 1 fold 4] {"seed": 1, "fold": 4, "t_A": 0.0, "t_ce": 9.0, "ce_steps": 252, "t_total": 10.7, "auc": {"A": 0.7983, "F0": 0.7529, "CE": 0.8245, "A+F0": 0.7956, "A+CE": 0.8271}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3633.20it/s]
+[seed 2 fold 0] {"seed": 2, "fold": 0, "t_A": 0.0, "t_ce": 9.1, "ce_steps": 252, "t_total": 11.4, "auc": {"A": 0.7949, "F0": 0.7305, "CE": 0.7995, "A+F0": 0.7801, "A+CE": 0.807}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3786.24it/s]
+[seed 2 fold 1] {"seed": 2, "fold": 1, "t_A": 0.0, "t_ce": 9.0, "ce_steps": 252, "t_total": 10.8, "auc": {"A": 0.7621, "F0": 0.707, "CE": 0.7709, "A+F0": 0.7535, "A+CE": 0.7787}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3775.05it/s]
+[seed 2 fold 2] {"seed": 2, "fold": 2, "t_A": 0.0, "t_ce": 8.8, "ce_steps": 252, "t_total": 10.7, "auc": {"A": 0.7842, "F0": 0.7174, "CE": 0.7769, "A+F0": 0.7707, "A+CE": 0.7954}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3438.06it/s]
+[seed 2 fold 3] {"seed": 2, "fold": 3, "t_A": 0.0, "t_ce": 8.8, "ce_steps": 252, "t_total": 10.6, "auc": {"A": 0.7994, "F0": 0.7523, "CE": 0.7918, "A+F0": 0.7968, "A+CE": 0.8111}}
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3445.27it/s]
+[seed 2 fold 4] {"seed": 2, "fold": 4, "t_A": 0.0, "t_ce": 9.0, "ce_steps": 252, "t_total": 10.7, "auc": {"A": 0.812, "F0": 0.7646, "CE": 0.8093, "A+F0": 0.8043, "A+CE": 0.8243}}
+
+finetune_minilm_bag1  seeds=[0, 1, 2] folds=[0, 1, 2, 3, 4]  (non-iclp scored, honest threshold, eg from A unless A[X])
+A         AUC=0.7901  honest=0.6172+-0.0095 d=+0.0000 Q=0.5109 R=0.7809 fixed0.55=0.6178  venueAUC={'cav': 0.7798, 'kr': 0.7735, 'lics': 0.7242, 'lpnmr': 0.8904}
+F0        AUC=0.7323  honest=0.5985+-0.0079 d=-0.0187 Q=0.4751 R=0.8142 fixed0.55=0.5999  venueAUC={'cav': 0.7128, 'kr': 0.7048, 'lics': 0.6675, 'lpnmr': 0.7812}
+CE        AUC=0.7913  honest=0.6171+-0.0094 d=-0.0000 Q=0.5041 R=0.7992 fixed0.55=0.6194  venueAUC={'cav': 0.7706, 'kr': 0.7823, 'lics': 0.7336, 'lpnmr': 0.8951}
+A+F0      AUC=0.7801  honest=0.6153+-0.0067 d=-0.0019 Q=0.4944 R=0.8168 fixed0.55=0.6147  venueAUC={'cav': 0.7683, 'kr': 0.7584, 'lics': 0.7143, 'lpnmr': 0.8846}
+A+CE      AUC=0.8036  honest=0.6236+-0.0128 d=+0.0064 Q=0.5115 R=0.8017 fixed0.55=0.6228  venueAUC={'cav': 0.7907, 'kr': 0.7875, 'lics': 0.7453, 'lpnmr': 0.9144}
+wrote D:\BachKhoa\hk261\DM\assignment\outputs\research\finetune_minilm_bag1.json

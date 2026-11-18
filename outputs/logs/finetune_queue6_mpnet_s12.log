@@ -1,0 +1,3 @@
+04:26:54 start mpnet s12 --methods ce ce5 --seeds 1 2 --no-refit
+04:38:39 done  mpnet s12 exit=0
+04:38:39 queue finished
