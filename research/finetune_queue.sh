@@ -6,7 +6,7 @@
 # Queue history (2026-11-14 night): minilm sf1/sf2/ce_e2/ce_e8/ce_noprefix, then mpnet/specter ce (OOM -> fixed, rerun).
 set -u
 export PYTHONIOENCODING=utf-8
-PY=.venv-gpu/Scripts/python.exe
+PY=${PY:-.venv-gpu/Scripts/python.exe}   # Linux/macOS: PY=.venv-gpu/bin/python bash research/finetune_queue.sh ...
 run() {  # run <enc> <tag> <extra args...>
   local enc=$1 tag=$2; shift 2
   echo "$(date '+%H:%M:%S') start $enc $tag $*"

@@ -1,7 +1,7 @@
 # 12 — Reproducibility
 
 Rules §5 yêu cầu tái lập được submission đã chọn từ dữ liệu có sẵn. Kết quả không tái lập được thì không đạt điểm tối đa
-phần implementation và evaluation (NFR-01). Hiện **chưa có gì** để tái lập. Tài liệu này là checklist và quy ước **[Đề xuất]**.
+phần implementation và evaluation (NFR-01). Hướng dẫn chạy lại lời giải hiện có: [15](15-solution-guide.md) (README tái lập đầy đủ theo FR-07 vẫn chưa viết). Tài liệu này là checklist và quy ước **[Đề xuất]**.
 
 ## 1. Checklist README nộp bài (FR-07)
 

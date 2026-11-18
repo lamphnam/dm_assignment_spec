@@ -3,7 +3,8 @@
 Đây là **knowledge base nội bộ** của nhóm học thuật 5 người, dùng cho bài tập lớn **CO3029 – Data Mining**
 (Kaggle competition [`assignment-data-mining-261`](https://www.kaggle.com/competitions/assignment-data-mining-261)).
 Repo chứa **đặc tả, thông tin dữ liệu, luật, chi tiết metric, các phát hiện đã kiểm chứng, công cụ tham chiếu, hướng dẫn cài đặt và Agent Skills**.
-Repo **chưa có lời giải**, và **không đề xuất** thuật toán, model hay feature nào.
+Phần tài liệu và skills **không đề xuất** thuật toán, model hay feature nào. Riêng bản này còn chứa **lời giải của chủ repo** (EXP-001…004) để các thành viên
+khác chạy thử và cải tiến; hiện trạng, cách chạy và quy trình so sánh ở [docs/15-solution-guide.md](docs/15-solution-guide.md). Lời giải đó là điểm xuất phát, không phải ràng buộc.
 
 ## Cách dùng
 

@@ -40,6 +40,7 @@ Thông tin về competition được lấy từ Kaggle API và các trang chính
 ### Môi trường và công cụ
 | File | Nội dung |
 |---|---|
+| [15-solution-guide.md](15-solution-guide.md) | **Lời giải EXP-001…004 của chủ repo: hiện trạng, cách cài/chạy lại, quy trình thử ý tưởng để cải tiến** |
 | [04-repository-structure.md](04-repository-structure.md) | Cấu trúc repo; những gì không commit |
 | [../tools/README.md](../tools/README.md) | Script tham chiếu tùy chọn: kiểm tra dữ liệu, scorer, validator, metadata Kaggle |
 | [10-development-guide.md](10-development-guide.md) | Môi trường, credentials, tải dữ liệu, nộp bài, git, lỗi đặc thù Windows |

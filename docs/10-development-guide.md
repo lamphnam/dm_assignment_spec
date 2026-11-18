@@ -2,8 +2,8 @@
 
 ## 1. Chuẩn bị môi trường
 
-Repo **không có dependency manifest**. Bạn tạo nó trong bản clone của mình, với thư viện tùy bạn chọn. Các bước dưới đây là **[Đề xuất]**,
-trừ những chỗ ghi khác.
+Lời giải của chủ repo có sẵn `requirements.txt` (CPU) và `requirements-gpu.txt`; cách cài ở [15 §3](15-solution-guide.md#3-cài-môi-trường).
+Nếu làm lời giải riêng từ đầu, các bước dưới đây là **[Đề xuất]**, trừ những chỗ ghi khác.
 
 ```powershell
 # Từ thư mục gốc của repo (PowerShell)

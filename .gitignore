@@ -1,20 +1,75 @@
+# =====================================================================
+# .gitignore — repo nội bộ nhóm CO3029 (Kaggle assignment-data-mining-261)
+# Nguyên tắc: không commit dữ liệu competition, credentials, môi trường ảo,
+# file nặng sinh ra khi chạy. Kiểm tra trước khi push: git status --ignored
+# =====================================================================
 
-# --- Dữ liệu competition (tải bằng tài khoản Kaggle của chính bạn) ---
+# --- Dữ liệu competition (CC BY-NC-SA 4.0; mỗi người tự tải bằng tài khoản Kaggle của mình) ---
 data/
 *.zip
+# Bản làm sạch/bổ sung của nhóm trưởng (train/Test/proceedings*): xin trực tiếp nhóm trưởng, không đưa lên git.
+leader_csv_file/
 
 # --- Credentials ---
 .env
+.env.*
 kaggle.json
 .kaggle/
+access_token
+*.token
+.mcp.json
 
-# --- Môi trường / cache ---
+# --- Môi trường Python / cache ---
 .venv/
 .venv-gpu/
 venv/
+env/
 __pycache__/
-*.pyc
+*.py[cod]
 .ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# --- Liên kết skill cục bộ cho agent đọc .agents/skills (ADR-0006) ---
+# --- Cache model và checkpoint (tải lại tự động từ HuggingFace; có thể nặng hàng trăm MB) ---
+.cache/
+huggingface/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+checkpoints/
+
+# --- Cấu hình cục bộ của máy / editor / agent ---
+.claude/settings.local.json
 .agents/skills
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Kết quả chạy: log và kết quả trung gian ---
+outputs/logs/
+*.log
+*.err
+# OOF trung gian (~100 file, ~40 MB) của các sweep: không track, tự sinh lại bằng research/finetune_cv.py
+# (cần GPU, ~1.5 giờ với RTX 3050 4 GB), hoặc xin file zip từ chủ repo.
+outputs/research/*.pkl
+outputs/**/*.npz
+
+# --- Ngoại lệ: những gì cần để chạy lại và so sánh với EXP-004 mà không cần GPU ---
+# 10 file OOF của thành phần ft_ens_v1 (11.5 MB); scripts/finalize_from_oof.py và research/ens_compare.py đọc các file này.
+!outputs/research/finetune_minilm_oof.pkl
+!outputs/research/finetune_minilm_s12_oof.pkl
+!outputs/research/finetune_minilm_ce5_oof.pkl
+!outputs/research/finetune_mpnet_ce_oof.pkl
+!outputs/research/finetune_mpnet_s12_oof.pkl
+!outputs/research/finetune_mpnet_ce5_oof.pkl
+!outputs/research/finetune_specter_ce_oof.pkl
+!outputs/research/finetune_specter_s12_oof.pkl
+!outputs/research/finetune_scincl_ce_oof.pkl
+!outputs/research/finetune_scincl_s12_oof.pkl
+# Dự đoán test của EXP-004 (15 KB), để đối chiếu khi tái lập.
+!outputs/exp004_ft_ens_v1/test_predictions.npz

@@ -17,8 +17,9 @@ assignment/
     └── reference/competition-pages/  # bản sao nguyên văn trang Kaggle
 ```
 
-Repo **không chứa** lời giải, dữ liệu, kết quả thí nghiệm, submission hay thông tin cá nhân. Không có branch chung và không nhận
-pull request từ thành viên (ADR-0008).
+> **Cập nhật 2026-11-18:** bản clone của chủ repo có thêm lời giải (`src/`, `scripts/`, `research/`, `experiments/`, `submissions/`, `outputs/`, `handoff/`,
+> `requirements*.txt`) để các thành viên khác chạy thử và cải tiến; xem [15](15-solution-guide.md). Dữ liệu vẫn không nằm trong repo.
+> Khung ban đầu (knowledge base không có lời giải, không nhận PR) là theo ADR-0008; phần lời giải là bổ sung của chủ repo.
 
 ## 2. Trong bản clone của bạn
 
@@ -35,5 +36,8 @@ Tổ chức thư mục là việc của bạn. Requirements chỉ đòi hỏi:
 | `.mcp.json` chứa token dạng literal | NFR-08. Dùng `${KAGGLE_API_TOKEN}` ([integrations §4](integrations/kaggle-mcp-setup.md#4-cấu-hình-cho-agent-khác--máy-khác)) |
 | `data/`, `*.zip` | Dữ liệu có license CC BY-NC-SA 4.0; mỗi người tự tải |
 | `.agents/skills` (liên kết cục bộ) | Liên kết riêng của từng máy (ADR-0006) |
+| `leader_csv_file/` | Bản dữ liệu làm sạch của nhóm trưởng (derived từ dữ liệu competition); xin trực tiếp nhóm trưởng |
+| `.venv/`, `.venv-gpu/`, checkpoint, cache HuggingFace, `outputs/logs/` | Nặng, tự sinh lại |
+| `outputs/research/*.pkl` (trừ 10 file OOF của EXP-004) | ~100 file OOF trung gian, ~40 MB; xem [15 §5](15-solution-guide.md#5-chạy-lại) |
 
 Nếu repo lời giải của bạn được đẩy lên GitHub, hãy để **private** và cấp quyền cho teaching team theo Rules §5.

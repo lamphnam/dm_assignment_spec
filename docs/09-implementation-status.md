@@ -12,7 +12,7 @@
 | Công cụ tham chiếu (`tools/`) | ✅ Đã kiểm thử ([tools/README.md](../tools/README.md)) |
 | Hướng dẫn môi trường, Kaggle CLI và MCP (10, integrations) | ✅ Lệnh tải dữ liệu và MCP đã chạy được; lệnh nộp bài **chưa chạy** |
 | Agent Skills (8) | ✅ Frontmatter hợp lệ; Claude Code đã phát hiện được skill |
-| Lời giải, dữ liệu, kết quả | Không có, theo đúng thiết kế |
+| Lời giải của chủ repo (EXP-001…004), kết quả, submission | ✅ Có từ 2026-11-14, xem [15](15-solution-guide.md). Dữ liệu competition không nằm trong repo |
 
 ## 2. Môi trường dùng để kiểm chứng **[Xác minh, 2026-11-11]**
 
@@ -27,4 +27,5 @@ kaggle-mcp-server 0.2.0, `mcp` 1.30.0, kaggle 2.2.5, kagglesdk 0.1.38, six 1.17.
 | 2026-11-11 | Audit: xác minh luật, thêm skills và tools, sửa số liệu oracle, phát hiện leakage qua `id` |
 | 2026-11-11 | Bỏ toàn bộ hạ tầng làm việc nhóm (task board, tracker, gộp team, so sánh giữa thành viên) |
 | 2026-11-11 | **Chốt mô hình (ADR-0008):** repo là knowledge base nội bộ của nhóm 5 người. Khôi phục phân tích dữ liệu và `tools/` (trước đó bị cách ly), gắn cảnh báo về luật chia sẻ. Bỏ các nội dung mang tính chỉ định lời giải: baseline B0/B1, protocol validation cố định, thiết kế gợi ý, kiến trúc pipeline (03), danh sách feature gợi ý |
+| 2026-11-18 | Thêm lời giải của chủ repo (EXP-001…004, Public tốt nhất 0.66918) để thành viên khác chạy thử và cải tiến: [15](15-solution-guide.md), `requirements*.txt`, soạn lại `.gitignore` và README |
 | 2026-11-11 | Ghi câu trả lời của giảng viên cho Q-11..Q-14: được chia sẻ trong nhóm, nộp độc lập, cuối kỳ gộp vào team của người cao điểm nhất. Thêm điều kiện gộp §5c (trần tổng submission) vào 14 |
